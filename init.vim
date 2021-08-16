@@ -1,4 +1,9 @@
-call plug#begin('~/AppData/Local/nvim/plugged')
+if has('win32')
+	call plug#begin('~/AppData/Local/nvim/plugged')
+endif
+if has('unix')
+	call plug#begin('~/.nvim/plugged')
+endif
 " below are some vim plugins for demonstration purpose.
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -16,6 +21,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'tomasiser/vim-code-dark'
 Plug 'neovim/nvim-lsp'
 Plug 'neovim/nvim-lspconfig'
+Plug 'kabouzeid/nvim-lspinstall'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':tsupdate'}
 Plug 'nvim-lua/completion-nvim'
 Plug 'tpope/vim-commentary'
@@ -27,7 +33,12 @@ call plug#end()
 
 " command! Scratch lua require'tools'.makeScratch()
 lua <<EOF
-package.path = package.path .. '~/AppData/Local/nvim/plugged/nvim-lsp/lua;'
+local is_linux = string.find(os.getenv('HOME'), '/home')
+
+-- then assume i'm on Windows
+if is_linux == nil then
+	package.path = package.path .. '~/AppData/Local/nvim/plugged/nvim-lsp/lua;'
+end
 -- require('lspconfig').clangd.setup{}
 -- require('nvim_lsp').tsserver.setup{}
 local nvim_lsp = require('lspconfig')
@@ -86,28 +97,63 @@ local on_attach = function(client, bufnr)
 end
 -- Use a loop to conveniently both setup defined servers 
 -- and map buffer local keybindings when the language server attaches
-local servers = {}
-servers['clangd'] = {}
-servers['tsserver'] = {
-	-- filetypes = { 'ts', 'd.ts' }
-}
-servers['pyls'] = {
-	filetypes = { 'py', 'python' }
-}
-servers['vuels'] = {
-	cmd = {"vls.cmd"}
-}
+-- local servers = {}
+-- if is_linux == nil then 
+-- 	servers['clangd'] = {}
+-- else
+-- 	servers['clang'] = {}
+-- end
+-- servers['tsserver'] = {}
+-- servers['pyls'] = {
+-- 	filetypes = { 'py', 'python' }
+-- }
+-- servers['vuels'] = {
+-- 	cmd = {"vls.cmd"}
+-- }
 
-for serverName, serverConfig in pairs(servers) do
-	local config = {on_attach = on_attach}
+require'lspinstall'.setup()
+local servers = require'lspinstall'.installed_servers()
 
-	for key in pairs(serverConfig) do
-		config[key] = serverConfig[key]
+-- for serverName, serverConfig in pairs(servers) do
+-- 	print(serverName)
+-- 	if nvim_lsp[serverName] ~= nil then
+-- 		local config = {on_attach = on_attach}
+-- 
+-- 		for key in pairs(serverConfig) do
+-- 			print(key)
+-- 			config[key] = serverConfig[key]
+-- 		end
+-- 
+-- 		-- print(vim.inspect(config));
+-- 
+-- 		nvim_lsp[serverName].setup(config)
+-- 	end
+-- end
+
+for _, server in pairs(servers) do
+	local capabilities = vim.lsp.protocol.make_client_capabilities()
+	capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+	local config = {
+		capabilities = capabilities,
+		on_attach = on_attach,
+		root_dir = function() return vim.loop.cwd() end
+	}
+	-- local config = {on_attach = on_attach}
+
+	-- nvim_lsp[server]['on_attach'] = on_attach
+	-- nvim_lsp[server].setup{}
+
+	if server == "php" then
+		config.filetypes = {"php"}
 	end
 
-	-- print(vim.inspect(config));
+	if server == "typescript" then
+		config.filetypes = {"ts", "tsx", "js", "jsx", "typescript", "typescriptreact"}
+	end
 
-	nvim_lsp[serverName].setup(config)
+	-- nvim_lsp[server].setup(config)
+	require'lspconfig'[server].setup(config)
 end
 
 require'nvim-treesitter.configs'.setup {
@@ -128,9 +174,9 @@ set completeopt=menuone,noinsert,noselect
 " Avoid showing message extra message when using completion
 set shortmess+=c
 
-let g:completion_enable_auto_popup = 1
+" let g:completion_enable_auto_popup = 1
 let g:completion_trigger_keyword_length = 3
-let g:completion_enable_snippet = 'vim-vsnip'
+" let g:completion_enable_snippet = 'vim-vsnip'
 let g:completion_matching_ignore_case = 1
 imap <silent> <C-p> <Plug>(completion_trigger)
 
@@ -167,7 +213,7 @@ let g:typescript_indent_disable = 1
 let g:airline_powerline_fonts = 1
 
 let g:minimap_width=10
-let g:minimap_auto_start=0
+let g:minimap_auto_start=1
 let g:minimap_auto_start_win_enter=0
 let g:minimap_highlight_range=1
 " hi MinimapCurrent ctermfg=Green guifg=#50FA7B guibg=#32302f
@@ -267,5 +313,4 @@ function MyTabLabel(n)
 
 	return bufname(buflist[winnr - 1])
 endfunction
-
 
