@@ -26,7 +26,6 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':tsupdate'}
 Plug 'nvim-lua/completion-nvim'
 Plug 'tpope/vim-commentary'
 Plug 'airblade/vim-gitgutter'
-Plug 'wfxr/minimap.vim'
 " Plug 'wfxr/minimap.vim'
 " Plug 'jackguo380/vim-lsp-cxx-highlight'
 call plug#end()
@@ -105,6 +104,13 @@ for _, server in pairs(servers) do
 		config.filetypes = {"html", "twig"}
 	end
 
+	if server == "lua" then
+		-- config.capabilities.workspace.workspaceFolders = {
+		-- 	"/usr/share/awesome/lib/gears"
+		-- }
+		-- print(vim.inspect(config))
+	end
+
 	require'lspconfig'[server].setup(config)
 end
 
@@ -113,6 +119,57 @@ require'nvim-treesitter.configs'.setup {
 		enable = true
 	}
 }
+
+local o = vim.o
+
+local function get_tab_number()
+	return 
+end
+
+
+function my_tab_line()
+	local tabpages = vim.api.nvim_list_tabpages()
+	local line = {}
+	local current_tab_number = vim.api.nvim_get_current_tabpage()
+
+	local n = #tabpages
+	for i, page_number in ipairs(tabpages) do
+		local windows = vim.api.nvim_tabpage_list_wins(page_number)
+
+		if page_number == current_tab_number then
+			-- line[i + page_number - 1] = "%#TabLineSel# * "
+			line[i + page_number - 1] = "%#SpecialKey# "
+		else
+			line[i + page_number - 1] = "%#TabLine# "
+		end
+
+		line[i + page_number - 1] = line[i + page_number - 1] .. page_number .. " "
+		line[i + page_number] = ""
+
+		for j, window in ipairs(windows) do
+			local buffer = vim.api.nvim_win_get_buf(window)
+			local buffer_name = vim.api.nvim_buf_get_name(buffer) or ""
+
+			buffer_name = buffer_name:match("[^/]*.$") or ""
+			
+			if j > 1 then
+				line[i + page_number] = line[i + page_number] .. " | " .. buffer_name
+			else
+				line[i + page_number] = buffer_name
+			end
+		end
+
+		-- line[i + page_number] = line[i + page_number] .. ""
+		line[i + page_number] = line[i + page_number] .. " "
+	end
+
+	-- after the last tab fill with TabLineFill and reset tab page nr
+	line[#line + 1] = '%#TabLineFill#'
+
+	return table.concat(line)
+end
+
+o.tabline = '%!v:lua.my_tab_line()'
 
 EOF
 
@@ -161,8 +218,9 @@ set encoding=utf-8
 let g:typescript_indent_disable = 1
 
 let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail'
+
+" Показывать табы, даже когда открыт всего один таб
+set showtabline=2
 
 function! AirlineOverride(...)
 	call a:1.add_section('airline_a', ' %{toupper(mode())} ')
@@ -217,36 +275,4 @@ call NERDTreeHighlightFile('ts', 'red', 'none')
 call NERDTreeHighlightFile('js', 'darkred', 'none')
 call NERDTreeHighlightFile('json', 'magenta', 'none')
 call NERDTreeHighlightFile('html', 'blue', 'none')
-
-" Настройка нумерации табов
-" set tabline=%!MyTabLine()
-
-" function MyTabLine()
-" 	let s = ''
-" 	for i in range(tabpagenr('$'))
-" 		if i + 1 == tabpagenr()
-" 			let s .= '%#TabLineSel#'
-" 		else
-" 			let s .= '%#TabLine#'
-" 		endif
-
-" 		let s .= '%' . (i + 1) . 'T'
-" 		let s .= ' ' . (i + 1) . ' %{MyTabLabel(' . (i + 1) . ')} '
-" 	endfor
-
-" 	let s .= '%#TabLineFill#%T'
-
-" 	if tabpagenr('$') > 1
-" 		let s .= '%=%#TabLine#%999Xclose'
-" 	endif
-
-" 	return s
-" endfunction
-
-" function MyTabLabel(n)
-" 	let buflist = tabpagebuflist(a:n)
-" 	let winnr = tabpagewinnr(a:n)
-
-" 	return bufname(buflist[winnr - 1])
-" endfunction
 
