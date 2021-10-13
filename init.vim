@@ -129,22 +129,21 @@ end
 
 function my_tab_line()
 	local tabpages = vim.api.nvim_list_tabpages()
-	local line = {}
+	local line = ""
 	local current_tab_number = vim.api.nvim_get_current_tabpage()
 
 	local n = #tabpages
+	print(vim.inspect(tabpages))
 	for i, page_number in ipairs(tabpages) do
 		local windows = vim.api.nvim_tabpage_list_wins(page_number)
 
 		if page_number == current_tab_number then
-			-- line[i + page_number - 1] = "%#TabLineSel# * "
-			line[i + page_number - 1] = "%#SpecialKey# "
+			line = line .. "%#SpecialKey# "
 		else
-			line[i + page_number - 1] = "%#TabLine# "
+			line = line .. "%#TabLine# "
 		end
 
-		line[i + page_number - 1] = line[i + page_number - 1] .. page_number .. " "
-		line[i + page_number] = ""
+		line = line .. "%" .. i .. "T" .. i .. " "
 
 		for j, window in ipairs(windows) do
 			local buffer = vim.api.nvim_win_get_buf(window)
@@ -153,20 +152,20 @@ function my_tab_line()
 			buffer_name = buffer_name:match("[^/]*.$") or ""
 			
 			if j > 1 then
-				line[i + page_number] = line[i + page_number] .. " | " .. buffer_name
+				line = line .. " | " .. buffer_name
 			else
-				line[i + page_number] = buffer_name
+				line = line .. buffer_name
 			end
 		end
 
-		-- line[i + page_number] = line[i + page_number] .. ""
-		line[i + page_number] = line[i + page_number] .. " "
+		-- line = line .. "%T"
+		line = line .. "%T "
 	end
 
 	-- after the last tab fill with TabLineFill and reset tab page nr
-	line[#line + 1] = '%#TabLineFill#'
+	line = line .. '%#TabLineFill#'
 
-	return table.concat(line)
+	return line
 end
 
 o.tabline = '%!v:lua.my_tab_line()'
