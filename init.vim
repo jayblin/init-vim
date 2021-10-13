@@ -211,6 +211,8 @@ set splitright
 
 set encoding=utf-8
 
+set cursorline
+
 " set autoindent
 
 let g:typescript_indent_disable = 1
