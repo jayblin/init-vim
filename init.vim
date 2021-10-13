@@ -133,7 +133,6 @@ function my_tab_line()
 	local current_tab_number = vim.api.nvim_get_current_tabpage()
 
 	local n = #tabpages
-	print(vim.inspect(tabpages))
 	for i, page_number in ipairs(tabpages) do
 		local windows = vim.api.nvim_tabpage_list_wins(page_number)
 
