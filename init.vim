@@ -202,7 +202,9 @@ set list
 set tabstop=4
 set softtabstop=0
 set shiftwidth=4
-set noexpandtab
+" set noexpandtab
+set expandtab
+au BufWinEnter * set autoindent
 
 set foldmethod=indent
 
