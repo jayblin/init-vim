@@ -26,6 +26,9 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':tsupdate'}
 Plug 'nvim-lua/completion-nvim'
 Plug 'tpope/vim-commentary'
 Plug 'airblade/vim-gitgutter'
+Plug 'nvim-treesitter/playground'
+Plug 'simrat39/symbols-outline.nvim'
+Plug 'EdenEast/nightfox.nvim'
 " Plug 'wfxr/minimap.vim'
 " Plug 'jackguo380/vim-lsp-cxx-highlight'
 call plug#end()
