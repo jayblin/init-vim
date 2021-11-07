@@ -29,6 +29,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'nvim-treesitter/playground'
 " Plug 'simrat39/symbols-outline.nvim'
 Plug 'akinsho/toggleterm.nvim'
+Plug 'savq/melange'
 " Plug 'wfxr/minimap.vim'
 " Plug 'jackguo380/vim-lsp-cxx-highlight'
 call plug#end()
@@ -297,7 +298,10 @@ nnoremap <C-b> :NERDTreeToggle<CR>
 " Поиск по названиям файлов
 nnoremap <silent> <C-P> :GFiles<CR>
 
-colorscheme codedark
+set termguicolors
+
+" colorscheme codedark " выглядит лучше без set termguicolors
+colorscheme melange
 
 set colorcolumn=81
 
