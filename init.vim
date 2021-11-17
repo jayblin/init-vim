@@ -125,6 +125,8 @@ require'nvim-treesitter.configs'.setup {
 	}
 }
 
+-- TOGGLETERM
+
 require("toggleterm").setup{
   -- size can be a number or function which is passed the current terminal
   size = 60,
@@ -145,7 +147,7 @@ require("toggleterm").setup{
     -- see :h nvim_open_win for details on borders however
     -- the 'curved' border is a custom border type
     -- not natively supported but implemented in this plugin.
-    border = 'curved',
+    -- border = 'curved',
     -- width = <value>,
     -- height = <value>,
     winblend = 0,
@@ -155,6 +157,8 @@ require("toggleterm").setup{
     }
   }
 }
+
+-- TOGGLETERM END
 
 local o = vim.o
 
