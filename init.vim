@@ -32,6 +32,7 @@ Plug 'akinsho/toggleterm.nvim'
 Plug 'savq/melange'
 " Plug 'wfxr/minimap.vim'
 " Plug 'jackguo380/vim-lsp-cxx-highlight'
+Plug 'L3MON4D3/LuaSnip'
 call plug#end()
 
 " command! Scratch lua require'tools'.makeScratch()
@@ -204,6 +205,36 @@ end
 
 o.tabline = '%!v:lua.my_tab_line()'
 
+-- SNIPPETS
+
+local ls = require("luasnip")
+local s = ls.snippet
+local sn = ls.snippet_node
+local t = ls.text_node
+local i = ls.insert_node
+local f = ls.function_node
+local c = ls.choice_node
+local d = ls.dynamic_node
+
+local function ls_copy(args)
+	return args[1]
+end
+
+ls.snippets = {
+	cpp = {
+		s("__grd", {
+			t("#ifndef "), f(ls_copy, 1),
+			t({"", "#define "}), i(1),
+			t({"", ""}),
+			t({"", ""}), i(0),
+			t({"", ""}),
+			t({"", "#endif // "}), f(ls_copy, 1),
+		}),
+	},
+}
+
+-- SNIPPETS END
+
 EOF
 
 " Use <Tab> and <S-Tab> to navigate through popup menu
@@ -316,3 +347,13 @@ call NERDTreeHighlightFile('js', 'darkred', 'none')
 call NERDTreeHighlightFile('json', 'magenta', 'none')
 call NERDTreeHighlightFile('html', 'blue', 'none')
 
+" SNIPPETS
+imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>' 
+inoremap <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<Cr>
+
+snoremap <silent> <Tab> <cmd>lua require('luasnip').jump(1)<Cr>
+snoremap <silent> <S-Tab> <cmd>lua require('luasnip').jump(-1)<Cr>
+
+imap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
+smap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
+" SNIPPETS END
