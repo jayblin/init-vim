@@ -110,6 +110,14 @@ for _, server in pairs(servers) do
 	end
 
 	if server == "lua" then
+		config.settings = {
+			Lua = {
+				diagnostics = {
+					globals = { "vim" }
+				}
+			}
+		}
+		-- config.diagnostics.globals
 		-- config.capabilities.workspace.workspaceFolders = {
 		-- 	"/usr/share/awesome/lib/gears"
 		-- }
@@ -238,6 +246,12 @@ ls.snippets = {
 }
 
 -- SNIPPETS END
+
+-- FILE_SEARCH
+
+require("file-search")
+
+-- FILE_SEARCH END
 
 EOF
 
