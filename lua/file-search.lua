@@ -77,8 +77,14 @@ function fs:populate_results_buf()
 end
 
 function fs:close_all()
-	vim.api.nvim_win_close(self.results_window, true)
-	vim.api.nvim_win_close(self.input_window, true)
+	if vim.api.nvim_win_is_valid(self.results_window) then
+		vim.api.nvim_win_close(self.results_window, true)
+	end
+	if vim.api.nvim_win_is_valid(self.input_window) then
+		vim.api.nvim_win_close(self.input_window, true)
+	end
+
+	vim.api.nvim_command("stopinsert")
 end
 
 function fs:create_results_buf()
@@ -178,6 +184,13 @@ function fs:create_input_buf()
 		{ noremap=true, silent=true }
 	)
 
+	vim.api.nvim_buf_set_keymap(
+		buf,
+		"i",
+		"<C-b>",
+		"<Cmd>lua _G.file_search:close_all()<CR>",
+		{ noremap=true, silent=true }
+	)
 	vim.api.nvim_buf_set_keymap(
 		buf,
 		"n",
