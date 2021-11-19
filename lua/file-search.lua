@@ -243,7 +243,7 @@ function fs:search(pattern)
 	self:populate_tables(pattern)
 	self:open_results_window(true)
 
-	vim.api.nvim_command("/"..pattern)
+	vim.api.nvim_command("/\\v"..pattern)
 end
 
 function fs:toggle()
