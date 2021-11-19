@@ -325,7 +325,7 @@ let g:minimap_highlight='Keyword'
 let g:minimap_git_colors=1
 let g:minimap_git_color_priority=200
 
-nnoremap <silent> `` :nohlsearch<CR>:call minimap#vim#ClearColorSearch()<CR>
+nnoremap <silent> `` :nohlsearch<CR>
 
 " Навигация по сплитам
 nnoremap <C-h> <C-w><C-h>
