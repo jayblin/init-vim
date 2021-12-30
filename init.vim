@@ -343,6 +343,7 @@ vnoremap k j
 " nnoremap <leader>n :NERDTreeFocus<CR>
 " nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-b> :NERDTreeToggle<CR>
+nnoremap <C-n> :NERDTreeFind<CR>
 
 " Поиск по названиям файлов
 nnoremap <silent> <C-P> :GFiles<CR>
