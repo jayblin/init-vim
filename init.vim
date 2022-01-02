@@ -8,8 +8,6 @@ endif
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'tpope/vim-fugitive'
 Plug 'leafgarland/typescript-vim'
 Plug 'sainnhe/edge'
@@ -33,6 +31,8 @@ Plug 'savq/melange'
 " Plug 'wfxr/minimap.vim'
 " Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'L3MON4D3/LuaSnip'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 call plug#end()
 
 " command! Scratch lua require'tools'.makeScratch()
@@ -386,7 +386,7 @@ nnoremap <C-b> :NERDTreeToggle<CR>
 nnoremap <C-n> :NERDTreeFind<CR>
 
 " Поиск по названиям файлов
-nnoremap <silent> <C-P> :GFiles<CR>
+nnoremap <silent> <C-p> <cmd>Telescope find_files<cr>
 
 set termguicolors
 
