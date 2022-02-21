@@ -34,6 +34,8 @@ Plug 'savq/melange'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'RRethy/nvim-base16'
+Plug 'lukas-reineke/indent-blankline.nvim'
 call plug#end()
 
 " command! Scratch lua require'tools'.makeScratch()
@@ -51,6 +53,7 @@ require("user.toggleterm")
 require("user.tabline")
 require("user.snippets")
 require("user.airline")
+require("user.indent")
 
 -- my plugin. dont use.
 --require("file-search")
@@ -78,8 +81,8 @@ set mouse=nv
 set number
 set relativenumber
 
-set listchars=tab:\|\ 
-set list
+" set listchars=tab:\|\ 
+" set list
 
 set tabstop=4
 set softtabstop=0
@@ -128,11 +131,19 @@ nnoremap <C-n> :NERDTreeFind<CR>
 nnoremap <silent> <C-p> <cmd>Telescope find_files<cr>
 nnoremap <silent> <C-f> <cmd>Telescope live_grep<cr>
 nnoremap <leader>b <cmd>Telescope buffers<cr>
+nnoremap <leader>g <cmd>Telescope git_status<cr>
 
 set termguicolors
 
-" colorscheme codedark " выглядит лучше без set termguicolors
-colorscheme melange
+colorscheme codedark
+" colorscheme melange
+" colorscheme base16-woodland
+" colorscheme base16-atelier-dune
+" colorscheme base16-atelier-plateau
+" colorscheme base16-atelier-savanna
+" colorscheme base16-darkmoss
+" colorscheme base16-dirtysea " light
+" colorscheme base16-equilibrium-gray-dark
 
 set colorcolumn=81
 
