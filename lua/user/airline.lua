@@ -43,5 +43,5 @@ function my_tab_title_formatter(n)
 end
 
 -- TODO: redo
-vim.cmd "source ~/.config/nvim/lua/user/airline.vim"
+-- vim.cmd "source ~/.config/nvim/lua/user/airline.vim"
 
