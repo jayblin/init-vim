@@ -40,7 +40,11 @@ call plug#end()
 
 " command! Scratch lua require'tools'.makeScratch()
 lua <<EOF
-local is_linux = string.find(os.getenv('HOME'), '/home')
+local home_path = os.getenv('HOME')
+
+if home_path == nil then home_path = "" end
+
+local is_linux = string.find(home_path, '/home')
 
 -- then assume i'm on Windows
 if is_linux == nil then
