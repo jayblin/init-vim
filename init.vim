@@ -58,6 +58,15 @@ require("user.tabline")
 require("user.snippets")
 require("user.airline")
 require("user.indent")
+local telescope = require("telescope")
+local t_actions = require("telescope.actions")
+
+telescope.setup{
+	defaults = {
+		layout_strategy = 'horizontal',
+		layout_config = { height = 0.99, width = 0.99 },
+	}
+}
 
 -- my plugin. dont use.
 --require("file-search")

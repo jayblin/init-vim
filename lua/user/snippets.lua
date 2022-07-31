@@ -24,45 +24,13 @@ local ts_snippets = {
     }),
     s("clog", {
         t("console.log("), i(0), t(");")
-    })
+    }),
+	s("**", {
+		t("/**"),
+		t({"", " * "}), i(0),
+		t({"", " */"}),
+	}),
 }
-
--- ls.snippets = {
--- 	cpp = {
--- 		s("__grd", {
--- 			t("#ifndef "), f(ls_copy, 1),
--- 			t({"", "#define "}), i(1),
--- 			t({"", ""}),
--- 			t({"", ""}), i(0),
--- 			t({"", ""}),
--- 			t({"", "#endif // "}), f(ls_copy, 1),
--- 		}),
--- 	},
---     typescriptreact = ts_snippets,
---     typescript = ts_snippets,
---     php = {
---         s("pufunc", {
---             t({"/**", ""}),
---             t(" * "), i(2),
---             t({"", ""}),
---             t({" */", ""}),
---             t("public function "), i(1), t({"()", ""}),
---             t({"{", ""}),
---          	t({"", ""}), i(0),
---             t({"}", ""})
---         }),
---         s("prfunc", {
---             t({"/**", ""}),
---             t(" * "), i(2),
---             t({"", ""}),
---             t({" */", ""}),
---             t("private function "), i(1), t({"()", ""}),
---             t({"{", ""}),
---          	t({"", ""}), i(0),
---             t({"}", ""})
---         }),
---     },
--- }
 
 local cpp_snippets = {
 	s("__grd", {
@@ -103,3 +71,5 @@ local cpp_snippets = {
 }
 
 ls.add_snippets("cpp", cpp_snippets)
+ls.add_snippets("typescript", ts_snippets)
+ls.add_snippets("typescriptreact", ts_snippets)
