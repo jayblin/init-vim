@@ -36,6 +36,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'RRethy/nvim-base16'
 Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'ojroques/vim-oscyank', {'branch': 'main'}
 call plug#end()
 
 " command! Scratch lua require'tools'.makeScratch()
@@ -181,3 +182,8 @@ snoremap <silent> <S-Tab> <cmd>lua require('luasnip').jump(-1)<Cr>
 imap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
 smap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
 " SNIPPETS END
+
+" OSCYank
+vnoremap <leader>c :OSCYank<CR>
+nmap <leader>o <Plug>OSCYank
+" OSCYank
