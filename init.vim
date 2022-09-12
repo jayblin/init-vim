@@ -12,8 +12,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'leafgarland/typescript-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
 Plug 'tomasiser/vim-code-dark'
 
 Plug 'neovim/nvim-lsp'
@@ -37,6 +37,7 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'RRethy/nvim-base16'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'ojroques/vim-oscyank', {'branch': 'main'}
+Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
 call plug#end()
 
 " command! Scratch lua require'tools'.makeScratch()
@@ -59,6 +60,7 @@ require("user.tabline")
 require("user.snippets")
 require("user.airline")
 require("user.indent")
+require("user.bufferline")
 local telescope = require("telescope")
 local t_actions = require("telescope.actions")
 
