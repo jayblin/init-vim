@@ -1,3 +1,10 @@
+
+local mason = require("mason")
+local mason_lspconfig = require("mason-lspconfig")
+
+mason.setup()
+mason_lspconfig.setup()
+
 local u_cmp = require("user.cmp")
 
 local on_attach = function(client, bufnr)
@@ -23,7 +30,7 @@ local on_attach = function(client, bufnr)
 	buf_set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
 
 	-- Set autocommands conditional on server_capabilities
-	if client.resolved_capabilities.document_highlight then
+	if client.server_capabilities.document_highlight then
 		vim.api.nvim_exec([[
 		hi LspReferenceRead cterm=bold ctermbg=red guibg=LightYellow
 		hi LspReferenceText cterm=bold ctermbg=red guibg=LightYellow
@@ -39,45 +46,60 @@ local on_attach = function(client, bufnr)
 	-- require'completion'.on_attach(client, bufnr)
 end
 
-local lsp_installer = require("nvim-lsp-installer")
+require('lspconfig')['tsserver'].setup{
+    on_attach = on_attach,
+    capabilities = u_cmp.capabilities,
+}
 
-lsp_installer.on_server_ready(function(server)
-	-- local capabilities = vim.lsp.protocol.make_client_capabilities()
+require('lspconfig')['intelephense'].setup{
+    on_attach = on_attach,
+    capabilities = u_cmp.capabilities,
+}
 
-	-- capabilities.textDocument.completion.completionItem.snippetSupport = true
+require('lspconfig')['cssls'].setup{
+    on_attach = on_attach,
+    capabilities = u_cmp.capabilities,
+}
 
-	local opts = {
-		capabilities = u_cmp.capabilities,
-		on_attach = on_attach,
-		root_dir = function() return vim.loop.cwd() end
-	}
+-- local lsp_installer = require("nvim-lsp-installer")
 
-	if server.name == "sumneko_lua" then
-		local runtime_path = vim.split(package.path, ';')
-		table.insert(runtime_path, "lua/?.lua")
-		table.insert(runtime_path, "lua/?/init.lua")
+-- lsp_installer.on_server_ready(function(server)
+-- 	-- local capabilities = vim.lsp.protocol.make_client_capabilities()
 
-		opts.settings = {
-			Lua = {
-				runtime = {
-					version = 'LuaJIT',
-					path = runtime_path,
-				},
-				diagnostics = {
-					globals = { "vim" },
-				},
-				workspace = {
-					-- library = {
-					-- 	[vim.fn.expand("$VIMRUNTIME/lua")] = true,
-					-- },
-					-- library = vim.api.nvim_get_runtime_file("", true),
-				},
-			},
-		}
-	end
+-- 	-- capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-    server:setup(opts)
-end)
+-- 	local opts = {
+-- 		capabilities = u_cmp.capabilities,
+-- 		on_attach = on_attach,
+-- 		root_dir = function() return vim.loop.cwd() end
+-- 	}
+
+-- 	if server.name == "sumneko_lua" then
+-- 		local runtime_path = vim.split(package.path, ';')
+-- 		table.insert(runtime_path, "lua/?.lua")
+-- 		table.insert(runtime_path, "lua/?/init.lua")
+
+-- 		opts.settings = {
+-- 			Lua = {
+-- 				runtime = {
+-- 					version = 'LuaJIT',
+-- 					path = runtime_path,
+-- 				},
+-- 				diagnostics = {
+-- 					globals = { "vim" },
+-- 				},
+-- 				workspace = {
+-- 					-- library = {
+-- 					-- 	[vim.fn.expand("$VIMRUNTIME/lua")] = true,
+-- 					-- },
+-- 					-- library = vim.api.nvim_get_runtime_file("", true),
+-- 				},
+-- 			},
+-- 		}
+-- 	end
+
+--     server:setup(opts)
+-- end)
 
 vim.diagnostic.config({
 	virtual_text = false,

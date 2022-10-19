@@ -24,7 +24,9 @@ Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 
-Plug 'williamboman/nvim-lsp-installer'
+" Plug 'williamboman/nvim-lsp-installer'
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':tsupdate'}
 Plug 'tpope/vim-commentary'
 Plug 'airblade/vim-gitgutter'
@@ -106,7 +108,7 @@ set shiftwidth=4
 set noexpandtab
 
 set foldmethod=indent
-set foldnestmax=2
+set foldnestmax=20
 
 set lazyredraw
 
