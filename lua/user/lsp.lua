@@ -61,6 +61,11 @@ require('lspconfig')['cssls'].setup{
     capabilities = u_cmp.capabilities,
 }
 
+require('lspconfig')['clangd'].setup{
+    on_attach = on_attach,
+    capabilities = u_cmp.capabilities,
+}
+
 -- local lsp_installer = require("nvim-lsp-installer")
 
 -- lsp_installer.on_server_ready(function(server)
