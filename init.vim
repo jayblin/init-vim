@@ -40,6 +40,7 @@ Plug 'RRethy/nvim-base16'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'ojroques/vim-oscyank', {'branch': 'main'}
 Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
+Plug 'nvim-lua/lsp-status.nvim'
 call plug#end()
 
 " command! Scratch lua require'tools'.makeScratch()
@@ -63,6 +64,7 @@ require("user.snippets")
 require("user.airline")
 require("user.indent")
 require("user.bufferline")
+require("user.statusline")
 local telescope = require("telescope")
 local t_actions = require("telescope.actions")
 

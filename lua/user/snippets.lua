@@ -68,6 +68,11 @@ local cpp_snippets = {
 	s("inc", {
 		t("#include "), i(1)
 	}),
+	s("**", {
+		t("/**"),
+		t({"", " * "}), i(0),
+		t({"", " */"}),
+	}),
 }
 
 ls.add_snippets("cpp", cpp_snippets)

@@ -1,3 +1,6 @@
+local lsp_status = require "lsp-status"
+
+lsp_status.register_progress()
 
 local mason = require("mason")
 local mason_lspconfig = require("mason-lspconfig")
@@ -62,6 +65,13 @@ require('lspconfig')['cssls'].setup{
 }
 
 require('lspconfig')['clangd'].setup{
+    on_attach = on_attach,
+    capabilities = u_cmp.capabilities,
+	init_options = {
+		clangdFileStatus = true,
+	},
+	handlers = lsp_status.extensions.clangd.setup(),
+}
     on_attach = on_attach,
     capabilities = u_cmp.capabilities,
 }
