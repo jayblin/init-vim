@@ -23,6 +23,8 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
+Plug 'mfussenegger/nvim-dap'
+" Plug 'rcarriga/nvim-dap-ui'
 
 " Plug 'williamboman/nvim-lsp-installer'
 Plug 'williamboman/mason.nvim'
@@ -65,6 +67,10 @@ require("user.airline")
 require("user.indent")
 require("user.bufferline")
 require("user.statusline")
+require("user.dap")
+-- require("dapui").setup()
+require("user.mappings")
+
 local telescope = require("telescope")
 local t_actions = require("telescope.actions")
 
