@@ -72,6 +72,8 @@ require('lspconfig')['clangd'].setup{
 	},
 	handlers = lsp_status.extensions.clangd.setup(),
 }
+
+require('lspconfig')['svelte'].setup{
     on_attach = on_attach,
     capabilities = u_cmp.capabilities,
 }
