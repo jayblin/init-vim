@@ -109,6 +109,7 @@ set softtabstop=0
 set shiftwidth=4
 set noexpandtab
 
+set foldlevel=8
 set foldmethod=indent
 set foldnestmax=20
 
@@ -143,15 +144,15 @@ vnoremap j k
 vnoremap k j
 
 " Боковая панель NERDTree
-" nnoremap <leader>n :NERDTreeFocus<CR>
-" nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-b> :NERDTreeToggle<CR>
-nnoremap <C-n> :NERDTreeFind<CR>
+nnoremap <leader>b :NERDTreeToggle<CR>
+nnoremap <leader>n :NERDTreeFind<CR>
 
 " Поиск по названиям файлов
-nnoremap <silent> <C-p> <cmd>Telescope find_files<cr>
-nnoremap <silent> <C-f> <cmd>Telescope live_grep<cr>
-nnoremap <leader>b <cmd>Telescope buffers<cr>
+" nnoremap <silent> <C-p> <cmd>Telescope find_files<cr>
+" nnoremap <silent> <C-f> <cmd>Telescope live_grep<cr>
+nnoremap <leader>p <cmd>Telescope find_files<cr>
+nnoremap <leader>f <cmd>Telescope live_grep<cr>
+nnoremap <leader>h <cmd>Telescope buffers<cr>
 nnoremap <leader>g <cmd>Telescope git_status<cr>
 
 set termguicolors
