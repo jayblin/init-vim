@@ -5,7 +5,12 @@ lsp_status.register_progress()
 local mason = require("mason")
 local mason_lspconfig = require("mason-lspconfig")
 
-mason.setup()
+mason.setup({
+	providers = {
+		"mason.providers.client",
+		"mason.providers.registry-api",
+	}
+})
 mason_lspconfig.setup()
 
 local u_cmp = require("user.cmp")
@@ -69,6 +74,7 @@ require('lspconfig')['clangd'].setup{
     capabilities = u_cmp.capabilities,
 	init_options = {
 		clangdFileStatus = true,
+		compilationDatabasePath = "./build",
 	},
 	handlers = lsp_status.extensions.clangd.setup(),
 }
