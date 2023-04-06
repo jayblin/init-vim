@@ -65,6 +65,8 @@ require("user.airline")
 require("user.indent")
 require("user.bufferline")
 require("user.statusline")
+require("user.formating")
+
 local telescope = require("telescope")
 local t_actions = require("telescope.actions")
 
@@ -104,8 +106,9 @@ set relativenumber
 " set listchars=tab:\|\ 
 " set list
 
+set autoindent
+" set softtabstop=0
 set tabstop=4
-set softtabstop=0
 set shiftwidth=4
 set noexpandtab
 
@@ -121,8 +124,6 @@ set splitright
 set encoding=utf-8
 
 set cursorline
-
-" set autoindent
 
 let g:typescript_indent_disable = 1
 
@@ -201,3 +202,6 @@ smap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' 
 vnoremap <leader>c :OSCYank<CR>
 nmap <leader>o <Plug>OSCYank
 " OSCYank
+
+" nnoremap <leader>f <cmd>lua vim.api.nvim_exec('clang-format -i style=file ' .. vim.api.nvim_buf_get_name(0), false)<cr>
+" nnoremap <leader>f <cmd>!{clang-format -i style=file} expand('%:p')<cr>
