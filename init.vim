@@ -166,7 +166,13 @@ colorscheme codedark
 " colorscheme base16-dirtysea " light
 " colorscheme base16-equilibrium-gray-dark
 
+hi Normal guibg=NONE ctermbg=NONE
+hi EndOfBuffer guibg=NONE ctermbg=NONE
+hi LineNr guibg=NONE ctermbg=NONE
+hi SignColumn guibg=NONE ctermbg=NONE
+
 set colorcolumn=81
+set signcolumn=yes
 
 " NERDTrees File highlighting
 function! NERDTreeHighlightFile(extension, fg, bg)
