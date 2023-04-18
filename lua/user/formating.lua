@@ -1,4 +1,4 @@
-local function j_format()
+function _G.j_format()
 
 	if "cpp" == vim.bo.filetype then
 		local cmd = "!clang-format -i style=file " .. vim.api.nvim_buf_get_name(0)
@@ -7,11 +7,9 @@ local function j_format()
 
 end
 
-_G.j_format = j_format
-
 vim.api.nvim_set_keymap(
 	"n",
-	"<leader>f",
+	"<leader>fm",
 	"<cmd>lua _G.j_format()<CR>",
 	{ noremap=true, silent=true }
 )
