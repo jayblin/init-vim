@@ -43,7 +43,12 @@ function _G.build_cpp()
 			function (input) target_name = input  end
 		)
 	end
-	build_cmd = 'clear; cmake --build build --target=' .. target_name .. '; cmake --install build'
+
+	build_cmd = 'clear; cmake --build build; cmake --install build'
+
+	if (string.len(target_name) > 0) then
+		build_cmd = 'clear; cmake --build build --target=' .. target_name .. '; cmake --install build'
+	end
 
 	builder:open()
 	builder:send(build_cmd)
