@@ -67,7 +67,7 @@ dap.configurations.cpp = {
 			end
 		)
 		
-		return lines[option];
+		return lines[option]
     end,
     cwd = '${workspaceFolder}',
 	-- cwd = io.popen"cd":read'*l',
