@@ -161,6 +161,11 @@ nnoremap <leader>f <cmd>Telescope live_grep<cr>
 nnoremap <leader>h <cmd>Telescope buffers<cr>
 nnoremap <leader>g <cmd>Telescope git_status<cr>
 
+nnoremap <C-Left> <cmd>vertical resize +2<cr>
+nnoremap <C-Right> <cmd>vertical resize -2<cr>
+nnoremap <C-Up> <cmd>resize -2<cr>
+nnoremap <C-Down> <cmd>resize +2<cr>
+
 set termguicolors
 
 colorscheme codedark
@@ -179,6 +184,7 @@ hi LineNr guibg=NONE ctermbg=NONE
 hi SignColumn guibg=NONE ctermbg=NONE
 
 set colorcolumn=81
+set tw=80
 set signcolumn=yes
 
 " NERDTrees File highlighting
