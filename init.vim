@@ -47,14 +47,10 @@ call plug#end()
 
 " command! Scratch lua require'tools'.makeScratch()
 lua <<EOF
-local home_path = os.getenv('HOME')
 
-if home_path == nil then home_path = "" end
+local util = require("user.util")
 
-local is_linux = string.find(home_path, '/home')
-
--- then assume i'm on Windows
-if is_linux == nil then
+if util.os:query() == util.os.WINDOWS then
 	package.path = package.path .. '~/AppData/Local/nvim/plugged/nvim-lsp/lua;'
 end
 
