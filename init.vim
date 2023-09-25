@@ -180,8 +180,13 @@ hi LineNr guibg=NONE ctermbg=NONE
 hi SignColumn guibg=NONE ctermbg=NONE
 
 set colorcolumn=81
-set tw=80
 set signcolumn=yes
+set wrapmargin=0
+set textwidth=0
+set wrap
+set linebreak
+set textwidth=80
+set langmap=ФA,ИB,СC,ВD,УE,АF,ПG,РH,ШI,ОJ,ЛK,ДL,ЬM,ТN,ЩO,ЗP,ЙQ,КR,ЫS,ЕT,ГU,МV,ЦW,ЧX,НY,ЯZ,фa,иb,сc,вd,уe,аf,пg,рh,шi,оk,лj,дl,ьm,тn,щo,зp,йq,кr,ыs,еt,гu,мv,цw,чx,нy,яz
 
 " NERDTrees File highlighting
 function! NERDTreeHighlightFile(extension, fg, bg)
