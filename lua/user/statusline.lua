@@ -1,45 +1,22 @@
--- local lsp_status = require "lsp-status"
+function G_user_statusline_lsp_status()
+  local lsp_clients = vim.lsp.get_active_clients({bufnr=vim.api.nvim_get_current_buf()})
 
-local function sl_get_file_name(path)
-	local expr = '[^\\/]+[.].+$'
-    local start, finish = path:find(expr)
-    return path:sub(start,#path)
-end
+  if 1 ~= #lsp_clients then
+      return ""
+    end
 
-function sl_get_lsp_message()
-	local result = ""
-	-- local message = lsp_status.messages()
-	-- local bnum = vim.api.nvim_get_current_buf()
-	-- local bname = vim.api.nvim_buf_get_name(bnum)
-	-- -- Не совсем правильно т.к. у файлов могут быть одинаковые названия.
-	-- -- local filename1 = sl_get_file_name(bname)
-	
-	-- for i, msg in ipairs(message) do
-	-- 	if i ~= 1 then
-	-- 		result = result .. ';'
-	-- 	end
+  local result = ""
 
-	-- 	if msg.name == 'clangd' and msg.uri then
-	-- 		-- local filename2 = sl_get_file_name(msg.uri)
-	-- 		-- if filename1 == filename2 then
-	-- 			result = result .. ' clangd'
-	-- 			if msg.content ~= 'idle' then
-	-- 				result = result .. '...'
-	-- 			end
-	-- 			-- Решил пока не показывать текст, т.к. мерцает при
-	-- 			-- редактировании файла.
-	-- 			-- if msg.content then result = result .. ' ' .. msg.content  end
-	-- 		-- end
-	-- 	else
-	-- 		if msg.title then result =  result .. ' ' .. msg.title end
-	-- 		if msg.message then result = result .. ' ' .. msg.message end
-	-- 		if msg.percentage then
-	-- 			result = result .. string.format(' (%.0f%%)', msg.percentage)
-	-- 		end
-	-- 	end
-	-- end
+  for k,progress in pairs(lsp_clients[1].messages.progress) do
+      result = result .. " " .. (progress.title or "???") .. ":"
+    if not progress.done then
+      result = result .. " " .. (progress.percentage or "0") .. "%"
+    else
+      result = result .. " done"
+    end
+  end
 
-	return result
+  return result
 end
 
 local function status_line()
@@ -50,19 +27,16 @@ local function status_line()
   local right_align = '%='
   local line_no = '%10([%l/%L%)]'
   local pct_thru_file = '%5p%%'
-  local lsp = '%{v:lua.sl_get_lsp_message()}'
+  local lsp_status = '%{v:lua.G_user_statusline_lsp_status()}'
 
-  return string.format(
-    '%s%s%s%s%s%s%s%s',
-    mode,
-    file_name,
-    buf_nr,
-    modified,
-	lsp,
-    right_align,
-    line_no,
-    pct_thru_file
-  )
+  return mode .. file_name .. buf_nr .. modified .. right_align .. lsp_status .. line_no .. pct_thru_file
 end
 
 vim.opt.statusline = status_line()
+
+vim.api.nvim_create_autocmd(
+    {"DiagnosticChanged"},
+    {
+        callback = function () vim.opt.statusline = status_line() end
+    }
+)
