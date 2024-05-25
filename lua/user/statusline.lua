@@ -1,4 +1,4 @@
-local lsp_status = require "lsp-status"
+-- local lsp_status = require "lsp-status"
 
 local function sl_get_file_name(path)
 	local expr = '[^\\/]+[.].+$'

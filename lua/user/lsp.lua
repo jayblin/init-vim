@@ -1,6 +1,6 @@
-local lsp_status = require "lsp-status"
+-- local lsp_status = require "lsp-status"
 
-lsp_status.register_progress()
+-- lsp_status.register_progress()
 
 local mason = require("mason")
 local mason_lspconfig = require("mason-lspconfig")
@@ -77,10 +77,15 @@ require('lspconfig')['clangd'].setup{
 		clangdFileStatus = true,
 		compilationDatabasePath = "./build",
 	},
-	handlers = lsp_status.extensions.clangd.setup(),
+	-- handlers = lsp_status.extensions.clangd.setup(),
 }
 
 require('lspconfig')['svelte'].setup{
+    on_attach = on_attach,
+    capabilities = u_cmp.capabilities,
+}
+
+require('lspconfig')['lua_ls'].setup{
     on_attach = on_attach,
     capabilities = u_cmp.capabilities,
 }

@@ -5,44 +5,45 @@ if has('unix')
 	call plug#begin('~/.nvim/plugged')
 endif
 " below are some vim plugins for demonstration purpose.
-Plug 'preservim/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'ryanoasis/vim-devicons'
-Plug 'tpope/vim-fugitive'
-Plug 'leafgarland/typescript-vim'
-Plug 'pangloss/vim-javascript'
-Plug 'maxmellon/vim-jsx-pretty'
+Plug 'preservim/nerdtree', { 'tag': '6.10' }
+" Plug 'Xuyuanp/nerdtree-git-plugin'
+" Plug 'ryanoasis/vim-devicons'
+Plug 'tpope/vim-fugitive', { 'tag': 'v3.7' }
+" Plug 'leafgarland/typescript-vim'
+" Plug 'pangloss/vim-javascript'
+" Plug 'maxmellon/vim-jsx-pretty'
 " Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
-Plug 'tomasiser/vim-code-dark'
+Plug 'tomasiser/vim-code-dark', { 'commit': 'd05d1ab602048fc13fd8cc70cd722c083b0fd904' }
 
-Plug 'neovim/nvim-lsp'
-Plug 'neovim/nvim-lspconfig'
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-cmdline'
-Plug 'hrsh7th/nvim-cmp'
-Plug 'mfussenegger/nvim-dap'
+Plug 'neovim/nvim-lsp', { 'tag': 'v0.1.8' }
+" Plug 'neovim/nvim-lspconfig', { 'tag': 'v0.1.8' }
+Plug 'hrsh7th/cmp-nvim-lsp', { 'commit': '39e2eda76828d88b773cc27a3f61d2ad782c922d' }
+" Plug 'hrsh7th/cmp-buffer'
+" Plug 'hrsh7th/cmp-path'
+" Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp', { 'commit': '5260e5e8ecadaf13e6b82cf867a909f54e15fd07' }
+Plug 'mfussenegger/nvim-dap', { 'tag': '0.7.0' }
 " Plug 'rcarriga/nvim-dap-ui'
 
 " Plug 'williamboman/nvim-lsp-installer'
-Plug 'williamboman/mason.nvim'
-Plug 'williamboman/mason-lspconfig.nvim'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':tsupdate'}
-Plug 'tpope/vim-commentary'
-Plug 'airblade/vim-gitgutter'
-Plug 'nvim-treesitter/playground'
-Plug 'akinsho/toggleterm.nvim'
-Plug 'savq/melange'
-Plug 'L3MON4D3/LuaSnip'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'RRethy/nvim-base16'
+Plug 'williamboman/mason.nvim', { 'tag': 'v1.10.0' }
+Plug 'williamboman/mason-lspconfig.nvim', { 'tag': 'v1.29.0' }
+Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':tsupdate', 'tag': 'v0.9.2' }
+Plug 'tpope/vim-commentary', { 'tag': 'v1.3' }
+Plug 'airblade/vim-gitgutter', { 'commit': 'e801371917e52805a4ceb1e93f55ed1fba712f82' }
+" Plug 'nvim-treesitter/playground' deprecated use :Inspect :InspectTree
+" :EditQuery (Nvim 0.10+)
+Plug 'akinsho/toggleterm.nvim', { 'tag': 'v2.11.0' }
+Plug 'savq/melange', { 'tag': '2024-01-27' }
+Plug 'L3MON4D3/LuaSnip', { 'tag': 'v2.3.0' }
+Plug 'nvim-lua/plenary.nvim', { 'tag': 'v0.1.4' }
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.8' }
+Plug 'RRethy/nvim-base16', { 'commit': '6ac181b5733518040a33017dde654059cd771b7c' }
 " Plug 'lukas-reineke/indent-blankline.nvim'
-Plug 'ojroques/vim-oscyank', {'branch': 'main'}
-Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
-Plug 'nvim-lua/lsp-status.nvim'
+Plug 'ojroques/vim-oscyank', { 'tag': 'v2.0.0' }
+Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.12.0' }
+" Plug 'nvim-lua/lsp-status.nvim'
 call plug#end()
 
 " command! Scratch lua require'tools'.makeScratch()
