@@ -44,7 +44,7 @@ end
 
 local function status_line()
   local mode = '%-5{%v:lua.string.upper(v:lua.vim.fn.mode())%}'
-  local file_name = '%-.16f'
+  local file_name = '%-.46f'
   local buf_nr = '[%n]'
   local modified = ' %-m'
   local right_align = '%='

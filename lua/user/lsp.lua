@@ -59,7 +59,8 @@ require('lspconfig')['tsserver'].setup{
     capabilities = u_cmp.capabilities,
 }
 
-require('lspconfig')['intelephense'].setup{
+-- require('lspconfig')['intelephense'].setup{
+require('lspconfig')['phpactor'].setup{
     on_attach = on_attach,
     capabilities = u_cmp.capabilities,
 }

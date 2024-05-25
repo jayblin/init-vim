@@ -39,7 +39,7 @@ Plug 'L3MON4D3/LuaSnip'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'RRethy/nvim-base16'
-Plug 'lukas-reineke/indent-blankline.nvim'
+" Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'ojroques/vim-oscyank', {'branch': 'main'}
 Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
 Plug 'nvim-lua/lsp-status.nvim'
@@ -64,10 +64,10 @@ require("user.toggleterm")
 require("user.tabline")
 require("user.snippets")
 require("user.airline")
-require("user.indent")
+-- require("user.indent")
 require("user.bufferline")
 require("user.statusline")
-require("user.formating")
+-- require("user.formating")
 require("user.dap")
 -- require("dapui").setup()
 require("user.mappings")
@@ -115,7 +115,9 @@ set autoindent
 " set softtabstop=0
 set tabstop=4
 set shiftwidth=4
-set noexpandtab
+" set noexpandtab
+set expandtab
+au BufWinEnter * set autoindent
 
 set foldlevel=8
 set foldmethod=indent
@@ -189,7 +191,7 @@ set wrapmargin=0
 set textwidth=0
 set wrap
 set linebreak
-set textwidth=80
+" set textwidth=80
 set langmap=ФA,ИB,СC,ВD,УE,АF,ПG,РH,ШI,ОJ,ЛK,ДL,ЬM,ТN,ЩO,ЗP,ЙQ,КR,ЫS,ЕT,ГU,МV,ЦW,ЧX,НY,ЯZ,фa,иb,сc,вd,уe,аf,пg,рh,шi,оk,лj,дl,ьm,тn,щo,зp,йq,кr,ыs,еt,гu,мv,цw,чx,нy,яz
 
 " NERDTrees File highlighting
@@ -215,8 +217,8 @@ smap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' 
 " SNIPPETS END
 
 " OSCYank
-vnoremap <leader>c :OSCYank<CR>
-nmap <leader>o <Plug>OSCYank
+vnoremap <leader>c :OSCYankVisual<CR>
+" nmap <leader>o <Plug>OSCYank
 " OSCYank
 
 " nnoremap <leader>f <cmd>lua vim.api.nvim_exec('clang-format -i style=file ' .. vim.api.nvim_buf_get_name(0), false)<cr>

@@ -1,13 +1,16 @@
-local home_path = os.getenv('HOME')
-
-if home_path == nil then home_path = "" end
-
-local is_linux = string.find(home_path, '/home')
+local util = require("user.util")
 
 local _shell = vim.o.shell
+local queried_os = util.os:query()
 
-if is_linux == nil then
+if queried_os == util.os.WINDOWS then
 	_shell = "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+end
+
+local height = vim.o.lines
+
+if queried_os == util.os.MACOS then
+	height = vim.o.lines - 3
 end
 
 require("toggleterm").setup{
@@ -33,7 +36,7 @@ require("toggleterm").setup{
     -- not natively supported but implemented in this plugin.
 	border = 'curved',
 	width = vim.o.columns,
-	height = vim.o.lines,
+	height = height,
     winblend = 0,
     highlights = {
       border = "Normal",
