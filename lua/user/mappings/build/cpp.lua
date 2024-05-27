@@ -1,5 +1,6 @@
 CppCommandFactory = {
     _cur_target_name = nil,
+    _last_test_cmd = nil,
 }
 
 local function is_target_name_valid(target_name)
@@ -72,14 +73,24 @@ function CppCommandFactory:make_run_tests()
     end
 
 	if is_target_name_valid(self._cur_target_name) then
-        return './build/' .. self._cur_target_name
+        self._last_test_cmd = "./build/" .. self._cur_target_name
+        return self._last_test_cmd
 	end
 
     return nil
 end
 
-local function get_gtest_filter(bufnr, window)
+function CppCommandFactory:make_run_test_file(bufnr, window)
+    print("Не поддерживается")
 
+    return nil
+end
+
+function CppCommandFactory:make_run_last_test(bufnr, window)
+    return self._last_test_cmd
+end
+
+local function get_gtest_filter(bufnr, window)
     if not bufnr then
         return nil
     end
@@ -88,7 +99,6 @@ local function get_gtest_filter(bufnr, window)
         bufnr = bufnr,
         pos = vim.api.nvim_win_get_cursor(window)
     })
-    local result = nil
 
     for i = 40,1,-1 do
         if node then
@@ -141,7 +151,7 @@ local function get_gtest_filter(bufnr, window)
         end
     end
 
-    return result
+    return nil
 end
 
 function CppCommandFactory:make_run_test_case(bufnr, window)
@@ -153,7 +163,8 @@ function CppCommandFactory:make_run_test_case(bufnr, window)
     local filter = get_gtest_filter(bufnr, window)
 
 	if is_target_name_valid(self._cur_target_name) and filter then
-        return './build/' .. self._cur_target_name .. " --gtest_filter=" .. filter
+        self._last_test_cmd = "./build/" .. self._cur_target_name .. " --gtest_filter=" .. filter
+        return self._last_test_cmd
 	end
 
     return nil

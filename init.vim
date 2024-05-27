@@ -157,11 +157,9 @@ nnoremap <leader>b :NERDTreeToggle<CR>
 nnoremap <leader>n :NERDTreeFind<CR>
 
 " Поиск по названиям файлов
-" nnoremap <silent> <C-p> <cmd>Telescope find_files<cr>
-" nnoremap <silent> <C-f> <cmd>Telescope live_grep<cr>
 nnoremap <leader>p <cmd>Telescope find_files<cr>
 nnoremap <leader>f <cmd>Telescope live_grep<cr>
-nnoremap <leader>h <cmd>Telescope buffers<cr>
+nnoremap <leader>hb <cmd>Telescope buffers<cr>
 nnoremap <leader>g <cmd>Telescope git_status<cr>
 
 nnoremap <C-Left> <cmd>vertical resize +2<cr>
