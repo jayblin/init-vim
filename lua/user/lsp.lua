@@ -36,6 +36,7 @@ local on_attach = function(client, bufnr)
 	buf_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
 	buf_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
 	buf_set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
+	buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.format({async = false})<CR>', opts)
 
 	-- Set autocommands conditional on server_capabilities
 	if client.server_capabilities.document_highlight then
@@ -54,41 +55,68 @@ local on_attach = function(client, bufnr)
 	-- require'completion'.on_attach(client, bufnr)
 end
 
-require('lspconfig')['tsserver'].setup{
+local lspconf = require('lspconfig')
+
+-- vim.api.nvim_create_autocmd("LspAttach", {
+--     group = vim.api.nvim_create_augroup("lsp", { clear = true }),
+--     callback = function(args)
+--         vim.api.nvim_create_autocmd("BufWritePre", {
+--             buffer = args.buf,
+--             callback = function()
+--                 vim.lsp.buf.format{async = false, id = args.data.client_id}
+--             end
+--         })
+--     end
+-- })
+
+lspconf['tsserver'].setup{
     on_attach = on_attach,
     capabilities = u_cmp.capabilities,
 }
 
 -- require('lspconfig')['intelephense'].setup{
-require('lspconfig')['phpactor'].setup{
+lspconf['phpactor'].setup{
     on_attach = on_attach,
     capabilities = u_cmp.capabilities,
 }
 
-require('lspconfig')['cssls'].setup{
+lspconf['cssls'].setup{
     on_attach = on_attach,
     capabilities = u_cmp.capabilities,
 }
 
-require('lspconfig')['clangd'].setup{
+lspconf['clangd'].setup{
     on_attach = on_attach,
     capabilities = u_cmp.capabilities,
 	init_options = {
 		clangdFileStatus = true,
 		compilationDatabasePath = "./build",
 	},
+    -- cmd = {
+    --     "clangd", "--offset-encoding=utf-16"
+    -- },
 	-- handlers = lsp_status.extensions.clangd.setup(),
 }
 
-require('lspconfig')['svelte'].setup{
+lspconf['svelte'].setup{
     on_attach = on_attach,
     capabilities = u_cmp.capabilities,
 }
 
-require('lspconfig')['lua_ls'].setup{
+lspconf['lua_ls'].setup{
     on_attach = on_attach,
     capabilities = u_cmp.capabilities,
 }
+
+lspconf['cmake'].setup{
+    on_attach = on_attach,
+    capabilities = u_cmp.capabilities,
+}
+
+-- lspconf["sourcekit"].setup{
+--     on_attach = on_attach,
+--     capabilities = u_cmp.capabilities,
+-- }
 
 -- local lsp_installer = require("nvim-lsp-installer")
 

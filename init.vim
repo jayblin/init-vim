@@ -146,11 +146,11 @@ nnoremap <C-k> <C-w><C-j>
 nnoremap <C-j> <C-w><C-k>
 nnoremap <C-l> <C-w><C-l>
 
-nnoremap j k
-nnoremap k j
+" nnoremap j k
+" nnoremap k j
 
-vnoremap j k
-vnoremap k j
+" vnoremap j k
+" vnoremap k j
 
 " Боковая панель NERDTree
 nnoremap <leader>b :NERDTreeToggle<CR>
