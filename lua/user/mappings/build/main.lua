@@ -1,5 +1,6 @@
 local Terminal  = require("toggleterm.terminal").Terminal
 local CppCommandFactory = require("user.mappings.build.cpp")
+local PhpCommandFactory = require("user.mappings.build.php")
 
 local opts = { noremap=true, silent=true }
 local filetypes_that_need_rebuild = {}
@@ -21,6 +22,8 @@ local function get_command_factory()
 
     if "cpp" == t then
         return CppCommandFactory
+    elseif "php" == t then
+        return PhpCommandFactory
     end
 
     return nil
@@ -145,7 +148,7 @@ function _G.run_test_file__user_mappings()
     if b then
         b:use_last_target()
         exec_in_terminal(rebuild_if_needed(b))
-        exec_in_terminal(b:make_run_test_file())
+        exec_in_terminal(b:make_run_test_file(last_buf))
     end
 
     cleanup()

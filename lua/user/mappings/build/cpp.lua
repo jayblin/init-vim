@@ -80,13 +80,13 @@ function CppCommandFactory:make_run_tests()
     return nil
 end
 
-function CppCommandFactory:make_run_test_file(bufnr, window)
+function CppCommandFactory:make_run_test_file(bufnr)
     print("Не поддерживается")
 
     return nil
 end
 
-function CppCommandFactory:make_run_last_test(bufnr, window)
+function CppCommandFactory:make_run_last_test()
     return self._last_test_cmd
 end
 
