@@ -179,6 +179,20 @@ function _G.run_test_case__user_mappings()
     cleanup()
 end
 
+function _G.run_test_group__user_mappings()
+    setup()
+
+    local b = get_command_factory()
+
+    if b then
+        b:use_last_target()
+        exec_in_terminal(rebuild_if_needed(b))
+        exec_in_terminal(b:make_run_test_group(last_buf, last_win))
+    end
+
+    cleanup()
+end
+
 function _G.toggle_terminal__user_mappings()
     setup()
 
@@ -244,6 +258,12 @@ vim.api.nvim_set_keymap(
     "n",
     "<leader>ui",
     "<Cmd>lua _G.run_test_case__user_mappings()<CR>",
+    opts
+)
+vim.api.nvim_set_keymap(
+    "n",
+    "<leader>ug",
+    "<Cmd>lua _G.run_test_group__user_mappings()<CR>",
     opts
 )
 vim.api.nvim_set_keymap(

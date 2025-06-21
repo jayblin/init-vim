@@ -144,7 +144,10 @@ local function get_gtest_filter(bufnr, window)
                 end
 
                 if "TEST_F" == f_name then
-                    return test_fixture .. "." .. test_name
+                    return {test_fixture, test_name}
+                end
+                if "GTEST_TEST" == f_name then
+                    return {test_fixture, test_name}
                 end
             end
             node = node:parent()
@@ -163,7 +166,23 @@ function CppCommandFactory:make_run_test_case(bufnr, window)
     local filter = get_gtest_filter(bufnr, window)
 
 	if is_target_name_valid(self._cur_target_name) and filter then
-        self._last_test_cmd = "./build/" .. self._cur_target_name .. " --gtest_filter=" .. filter
+        self._last_test_cmd = "./build/" .. self._cur_target_name .. " --gtest_filter=" .. filter[1] .. "." .. filter[2]
+        return self._last_test_cmd
+	end
+
+    return nil
+end
+
+function CppCommandFactory:make_run_test_group(bufnr, window)
+    if string.sub(self._cur_target_name, -6) ~= "_tests" then
+        print(self._cur_target_name .. " - этот таргет не тестовый")
+        return nil
+    end
+
+    local filter = get_gtest_filter(bufnr, window)
+
+	if is_target_name_valid(self._cur_target_name) and filter then
+        self._last_test_cmd = "./build/" .. self._cur_target_name .. " --gtest_filter=\"" .. filter[1] .. ".*\""
         return self._last_test_cmd
 	end
 
