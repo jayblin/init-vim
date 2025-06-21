@@ -1,5 +1,7 @@
 function G_user_statusline_lsp_status()
-  local lsp_clients = vim.lsp.get_active_clients({bufnr=vim.api.nvim_get_current_buf()})
+    
+  -- local lsp_clients = vim.lsp.get_active_clients({bufnr=vim.api.nvim_get_current_buf()})
+  local lsp_clients = vim.lsp.get_clients({bufnr=vim.api.nvim_get_current_buf()})
 
   if 1 ~= #lsp_clients then
       return ""
@@ -8,11 +10,12 @@ function G_user_statusline_lsp_status()
   local result = ""
 
   for k,progress in pairs(lsp_clients[1].messages.progress) do
-      result = result .. " " .. (progress.title or "???") .. ":"
+      -- result = result .. " " .. (progress.title or "???") .. ":"
     if not progress.done then
-      result = result .. " " .. (progress.percentage or "0") .. "%"
+      result = result .. " " .. (progress.title or "???") .. ":"
+                  .. " " .. (progress.percentage or "0") .. "%"
     else
-      result = result .. " done"
+      -- result = result .. " done"
     end
   end
 
