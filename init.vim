@@ -27,8 +27,8 @@ Plug 'mfussenegger/nvim-dap', { 'tag': '0.7.0' }
 " Plug 'rcarriga/nvim-dap-ui'
 
 " Plug 'williamboman/nvim-lsp-installer'
-Plug 'williamboman/mason.nvim', { 'tag': 'v1.10.0' }
-Plug 'williamboman/mason-lspconfig.nvim', { 'tag': 'v1.29.0' }
+Plug 'williamboman/mason.nvim', { 'tag': 'v2.0.0' }
+Plug 'williamboman/mason-lspconfig.nvim', { 'tag': 'v2.0.0' }
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':tsupdate', 'tag': 'v0.9.2' }
 Plug 'tpope/vim-commentary', { 'tag': 'v1.3' }
 Plug 'airblade/vim-gitgutter', { 'commit': 'e801371917e52805a4ceb1e93f55ed1fba712f82' }
@@ -42,8 +42,11 @@ Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.8' }
 Plug 'RRethy/nvim-base16', { 'commit': '6ac181b5733518040a33017dde654059cd771b7c' }
 " Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'ojroques/vim-oscyank', { 'tag': 'v2.0.0' }
-Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.12.0' }
+" Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.12.0' }
 " Plug 'nvim-lua/lsp-status.nvim'
+
+"Plug 'codota/tabnine-nvim', { 'do': './dl_binaries.sh', 'commit': '3ae92fc4fa8b82bfc70fba9d0741fdb5842e74c1' }
+
 call plug#end()
 
 " command! Scratch lua require'tools'.makeScratch()
@@ -66,7 +69,7 @@ require("user.tabline")
 require("user.snippets")
 require("user.airline")
 -- require("user.indent")
-require("user.bufferline")
+-- require("user.bufferline")
 require("user.statusline")
 -- require("user.formating")
 require("user.dap")
@@ -82,6 +85,17 @@ telescope.setup{
 		layout_config = { height = 0.99, width = 0.99 },
 	}
 }
+
+-- require('tabnine').setup({
+--   disable_auto_comment=true,
+--   accept_keymap="<C-Space>",
+--   dismiss_keymap = "<C-]>",
+--   debounce_ms = 800,
+--   suggestion_color = {gui = "#808080", cterm = 244},
+--   exclude_filetypes = {"TelescopePrompt", "NvimTree"},
+--   log_file_path = nil, -- absolute path to Tabnine log file
+--   ignore_certificate_errors = false,
+-- })
 
 -- my plugin. dont use.
 --require("file-search")
@@ -109,8 +123,9 @@ set mouse=nv
 set number
 set relativenumber
 
-" set listchars=tab:\|\ 
-" set list
+set list
+set listchars=tab:··
+" set listchars=tab:!·,trail:·
 
 set autoindent
 " set softtabstop=0
@@ -142,15 +157,15 @@ nnoremap <silent> `` :nohlsearch<CR>
 
 " Навигация по сплитам
 nnoremap <C-h> <C-w><C-h>
-nnoremap <C-k> <C-w><C-j>
-nnoremap <C-j> <C-w><C-k>
+nnoremap <C-j> <C-w><C-j>
+nnoremap <C-k> <C-w><C-k>
 nnoremap <C-l> <C-w><C-l>
 
-nnoremap j k
-nnoremap k j
+" nnoremap j k
+" nnoremap k j
 
-vnoremap j k
-vnoremap k j
+" vnoremap j k
+" vnoremap k j
 
 " Боковая панель NERDTree
 nnoremap <leader>b :NERDTreeToggle<CR>
@@ -169,8 +184,8 @@ nnoremap <C-Down> <cmd>resize +2<cr>
 
 set termguicolors
 
-colorscheme codedark
-" colorscheme melange
+" colorscheme codedark
+colorscheme melange
 " colorscheme base16-woodland
 " colorscheme base16-atelier-dune
 " colorscheme base16-atelier-plateau
@@ -178,6 +193,8 @@ colorscheme codedark
 " colorscheme base16-darkmoss
 " colorscheme base16-dirtysea " light
 " colorscheme base16-equilibrium-gray-dark
+" colorscheme base16-equilibrium-light
+" colorscheme base16-atelier-heath-light
 
 hi Normal guibg=NONE ctermbg=NONE
 hi EndOfBuffer guibg=NONE ctermbg=NONE
@@ -191,7 +208,7 @@ set textwidth=0
 set wrap
 set linebreak
 " set textwidth=80
-set langmap=ФA,ИB,СC,ВD,УE,АF,ПG,РH,ШI,ОJ,ЛK,ДL,ЬM,ТN,ЩO,ЗP,ЙQ,КR,ЫS,ЕT,ГU,МV,ЦW,ЧX,НY,ЯZ,фa,иb,сc,вd,уe,аf,пg,рh,шi,оk,лj,дl,ьm,тn,щo,зp,йq,кr,ыs,еt,гu,мv,цw,чx,нy,яz
+set langmap=ФA,ИB,СC,ВD,УE,АF,ПG,РH,ШI,ОJ,ЛK,ДL,ЬM,ТN,ЩO,ЗP,ЙQ,КR,ЫS,ЕT,ГU,МV,ЦW,ЧX,НY,ЯZ,фa,иb,сc,вd,уe,аf,пg,рh,шi,оj,лk,дl,ьm,тn,щo,зp,йq,кr,ыs,еt,гu,мv,цw,чx,нy,яz
 
 " NERDTrees File highlighting
 function! NERDTreeHighlightFile(extension, fg, bg)
