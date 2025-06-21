@@ -80,7 +80,12 @@ telescope.setup{
 	defaults = {
 		layout_strategy = 'horizontal',
 		layout_config = { height = 0.99, width = 0.99 },
-	}
+	},
+    pickers = {
+        colorscheme = {
+            enable_preview = true,
+        }
+    },
 }
 
 -- my plugin. dont use.
@@ -169,7 +174,7 @@ nnoremap <C-Down> <cmd>resize +2<cr>
 
 set termguicolors
 
-colorscheme codedark
+" colorscheme codedark
 " colorscheme melange
 " colorscheme base16-woodland
 " colorscheme base16-atelier-dune
@@ -178,6 +183,8 @@ colorscheme codedark
 " colorscheme base16-darkmoss
 " colorscheme base16-dirtysea " light
 " colorscheme base16-equilibrium-gray-dark
+" colorscheme base16-black-metal-dark-funeral
+colorscheme base16-catppuccin-macchiato
 
 hi Normal guibg=NONE ctermbg=NONE
 hi EndOfBuffer guibg=NONE ctermbg=NONE
