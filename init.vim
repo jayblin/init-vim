@@ -16,20 +16,20 @@ Plug 'tpope/vim-fugitive', { 'tag': 'v3.7' }
 " Plug 'vim-airline/vim-airline-themes'
 Plug 'tomasiser/vim-code-dark', { 'commit': 'd05d1ab602048fc13fd8cc70cd722c083b0fd904' }
 
-Plug 'neovim/nvim-lsp', { 'tag': 'v0.1.8' }
+"Plug 'neovim/nvim-lsp', { 'tag': 'v0.1.8' }
 " Plug 'neovim/nvim-lspconfig', { 'tag': 'v0.1.8' }
-Plug 'hrsh7th/cmp-nvim-lsp', { 'commit': '39e2eda76828d88b773cc27a3f61d2ad782c922d' }
+"Plug 'hrsh7th/cmp-nvim-lsp', { 'commit': '39e2eda76828d88b773cc27a3f61d2ad782c922d' }
 " Plug 'hrsh7th/cmp-buffer'
 " Plug 'hrsh7th/cmp-path'
 " Plug 'hrsh7th/cmp-cmdline'
-Plug 'hrsh7th/nvim-cmp', { 'commit': '5260e5e8ecadaf13e6b82cf867a909f54e15fd07' }
-Plug 'mfussenegger/nvim-dap', { 'tag': '0.7.0' }
+"Plug 'hrsh7th/nvim-cmp', { 'commit': '5260e5e8ecadaf13e6b82cf867a909f54e15fd07' }
+"Plug 'mfussenegger/nvim-dap', { 'tag': '0.7.0' }
 " Plug 'rcarriga/nvim-dap-ui'
 
 " Plug 'williamboman/nvim-lsp-installer'
 Plug 'williamboman/mason.nvim', { 'tag': 'v2.0.0' }
-Plug 'williamboman/mason-lspconfig.nvim', { 'tag': 'v2.0.0' }
-Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':tsupdate', 'tag': 'v0.9.2' }
+"Plug 'williamboman/mason-lspconfig.nvim', { 'tag': 'v2.0.0' }
+Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':tsupdate', 'tag': 'v0.10.0' }
 Plug 'tpope/vim-commentary', { 'tag': 'v1.3' }
 Plug 'airblade/vim-gitgutter', { 'commit': 'e801371917e52805a4ceb1e93f55ed1fba712f82' }
 " Plug 'nvim-treesitter/playground' deprecated use :Inspect :InspectTree
@@ -41,7 +41,7 @@ Plug 'nvim-lua/plenary.nvim', { 'tag': 'v0.1.4' }
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.8' }
 Plug 'RRethy/nvim-base16', { 'commit': '6ac181b5733518040a33017dde654059cd771b7c' }
 " Plug 'lukas-reineke/indent-blankline.nvim'
-Plug 'ojroques/vim-oscyank', { 'tag': 'v2.0.0' }
+"Plug 'ojroques/vim-oscyank', { 'tag': 'v2.0.0' }
 " Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.12.0' }
 " Plug 'nvim-lua/lsp-status.nvim'
 
@@ -64,15 +64,12 @@ end
 
 require("user.lsp")
 require("user.treesitter")
-require("user.toggleterm")
-require("user.tabline")
+-- require("user.toggleterm")
 require("user.snippets")
-require("user.airline")
 -- require("user.indent")
 -- require("user.bufferline")
 require("user.statusline")
--- require("user.formating")
-require("user.dap")
+-- require("user.dap")
 -- require("dapui").setup()
 require("user.mappings")
 
@@ -108,18 +105,20 @@ telescope.setup{
 EOF
 
 " Use <Tab> and <S-Tab> to navigate through popup menu
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+"inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+"inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " Set completeopt to have a better completion experience
-set completeopt=menu,menuone,noselect
+set completeopt=menu,menuone,noselect,popup,longest,fuzzy
+set pumheight=20
+set pumwidth=15
 
 " Avoid showing message extra message when using completion
 set shortmess+=c
 
 syntax on
 
-set conceallevel=3
+"set conceallevel=0
 
 set hidden
 
@@ -173,14 +172,20 @@ nnoremap <C-l> <C-w><C-l>
 " vnoremap k j
 
 " Боковая панель NERDTree
-nnoremap <leader>b :NERDTreeToggle<CR>
-nnoremap <leader>n :NERDTreeFind<CR>
+"nnoremap <leader>b :NERDTreeToggle<CR>
+"nnoremap <leader>n :NERDTreeFind<CR>
+nnoremap <Space>b :NERDTreeToggle<CR>
+nnoremap <Space>n :NERDTreeFind<CR>
 
 " Поиск по названиям файлов
-nnoremap <leader>p <cmd>Telescope find_files<cr>
-nnoremap <leader>f <cmd>Telescope live_grep<cr>
-nnoremap <leader>hb <cmd>Telescope buffers<cr>
-nnoremap <leader>g <cmd>Telescope git_status<cr>
+"nnoremap <leader>p <cmd>Telescope find_files<cr>
+"nnoremap <leader>f <cmd>Telescope live_grep<cr>
+"nnoremap <leader>hb <cmd>Telescope buffers<cr>
+"nnoremap <leader>g <cmd>Telescope git_status<cr>
+nnoremap <Space>p <cmd>Telescope find_files<cr>
+nnoremap <Space>f <cmd>Telescope live_grep<cr>
+nnoremap <Space>hb <cmd>Telescope buffers<cr>
+nnoremap <Space>g <cmd>Telescope git_status<cr>
 
 nnoremap <C-Left> <cmd>vertical resize +2<cr>
 nnoremap <C-Right> <cmd>vertical resize -2<cr>
@@ -189,7 +194,7 @@ nnoremap <C-Down> <cmd>resize +2<cr>
 
 set termguicolors
 
-" colorscheme codedark
+ "colorscheme codedark
 " colorscheme melange
 " colorscheme base16-woodland
 " colorscheme base16-atelier-dune
@@ -227,6 +232,10 @@ call NERDTreeHighlightFile('ts', 'red', 'none')
 call NERDTreeHighlightFile('js', 'darkred', 'none')
 call NERDTreeHighlightFile('json', 'magenta', 'none')
 call NERDTreeHighlightFile('html', 'blue', 'none')
+
+" LSP
+autocmd LspProgress * redrawstatus
+" LSP END
 
 " SNIPPETS
 imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>' 

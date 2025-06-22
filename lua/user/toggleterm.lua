@@ -17,7 +17,7 @@ require("toggleterm").setup{
   -- size can be a number or function which is passed the current terminal
   -- size = 60,
   -- open_mapping = [[<c-\>]],
-  open_mapping = [[<leader>t]],
+  open_mapping = [[<Space>t]],
   hide_numbers = true, -- hide the number column in toggleterm buffers
   shade_filetypes = {},
   shade_terminals = true,

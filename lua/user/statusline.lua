@@ -30,16 +30,17 @@ local function status_line()
   local right_align = '%='
   local line_no = '%10([%l/%L%)]'
   local pct_thru_file = '%5p%%'
-  local lsp_status = '%{v:lua.G_user_statusline_lsp_status()}'
+  -- local lsp_status = '%{v:lua.G_user_statusline_lsp_status()}'
+  local lsp_status = '%{v:lua.vim.lsp.status()}'
 
   return mode .. file_name .. buf_nr .. modified .. right_align .. lsp_status .. line_no .. pct_thru_file
 end
 
 vim.opt.statusline = status_line()
 
-vim.api.nvim_create_autocmd(
-    {"DiagnosticChanged"},
-    {
-        callback = function () vim.opt.statusline = status_line() end
-    }
-)
+-- vim.api.nvim_create_autocmd(
+--     {"DiagnosticChanged"},
+--     {
+--         callback = function () vim.opt.statusline = status_line() end
+--     }
+-- )

@@ -247,55 +247,55 @@ end
 
 vim.api.nvim_set_keymap(
     "n",
-    "<leader>ua",
+    "<Space>ua",
     "<Cmd>lua _G.run_tests__user_mappings()<CR>",
     opts
 )
 vim.api.nvim_set_keymap(
     "n",
-    "<leader>uf",
+    "<Space>uf",
     "<Cmd>lua _G.run_test_file__user_mappings()<CR>",
     opts
 )
 vim.api.nvim_set_keymap(
     "n",
-    "<leader>ui",
+    "<Space>ui",
     "<Cmd>lua _G.run_test_case__user_mappings()<CR>",
     opts
 )
 vim.api.nvim_set_keymap(
     "n",
-    "<leader>ug",
+    "<Space>ug",
     "<Cmd>lua _G.run_test_group__user_mappings()<CR>",
     opts
 )
 vim.api.nvim_set_keymap(
     "n",
-    "<leader>ul",
+    "<Space>ul",
     "<Cmd>lua _G.run_test_last__user_mappings()<CR>",
     opts
 )
 vim.api.nvim_set_keymap(
     "n",
-    "<leader>cl",
+    "<Space>cl",
     "<Cmd>lua _G.build_last_target__user_mappings()<CR>",
     opts
 )
 vim.api.nvim_set_keymap(
     "n",
-    "<leader>cc",
+    "<Space>cc",
     "<Cmd>lua _G.build_with_choice__user_mappings()<CR>",
     opts
 )
 vim.api.nvim_set_keymap(
     "n",
-    "<leader>rl",
+    "<Space>rl",
     "<Cmd>lua _G.run_last_target__user_mappings()<CR>",
     opts
 )
 vim.api.nvim_set_keymap(
     "n",
-    "<leader>rc",
+    "<Space>rc",
     "<Cmd>lua _G.run_with_choice__user_mappings()<CR>",
     opts
 )

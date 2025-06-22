@@ -1,0 +1,400 @@
+
+
+
+n  [c           @<Plug>(GitGutterPrevHunk)
+	Last set from ~/.nvim/plugged/vim-gitgutter/autoload/gitgutter.vim line 144
+n  \hp          @<Plug>(GitGutterPreviewHunk)
+	Last set from ~/.nvim/plugged/vim-gitgutter/autoload/gitgutter.vim line 160
+n  \hu          @<Plug>(GitGutterUndoHunk)
+	Last set from ~/.nvim/plugged/vim-gitgutter/autoload/gitgutter.vim line 157
+n  \hs          @<Plug>(GitGutterStageHunk)
+	Last set from ~/.nvim/plugged/vim-gitgutter/autoload/gitgutter.vim line 154
+x  \hs          @<Plug>(GitGutterStageHunk)
+	Last set from ~/.nvim/plugged/vim-gitgutter/autoload/gitgutter.vim line 151
+n  ]c           @<Plug>(GitGutterNextHunk)
+	Last set from ~/.nvim/plugged/vim-gitgutter/autoload/gitgutter.vim line 147
+x  ac           @<Plug>(GitGutterTextObjectOuterVisual)
+	Last set from ~/.nvim/plugged/vim-gitgutter/autoload/gitgutter.vim line 173
+o  ac           @<Plug>(GitGutterTextObjectOuterPending)
+	Last set from ~/.nvim/plugged/vim-gitgutter/autoload/gitgutter.vim line 167
+x  ic           @<Plug>(GitGutterTextObjectInnerVisual)
+	Last set from ~/.nvim/plugged/vim-gitgutter/autoload/gitgutter.vim line 170
+o  ic           @<Plug>(GitGutterTextObjectInnerPending)
+	Last set from ~/.nvim/plugged/vim-gitgutter/autoload/gitgutter.vim line 164
+s  <Tab>       * <Cmd>lua require('luasnip').jump(1)<CR>
+	Last set from ~/.config/nvim/init.vim line 239
+x  #           * <Lua 9: vim/_defaults.lua:0>
+                 :help v_#-default
+	Last set from Lua (run Nvim with -V1 for more details)
+o  %             <Plug>(MatchitOperationForward)
+	Last set from ~/Downloads/nvim-v0.11.2/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 74
+x  %             <Plug>(MatchitVisualForward)
+	Last set from ~/Downloads/nvim-v0.11.2/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 72
+n  %             <Plug>(MatchitNormalForward)
+	Last set from ~/Downloads/nvim-v0.11.2/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 70
+n  &           * :&&<CR>
+                 :help &-default
+	Last set from Lua (run Nvim with -V1 for more details)
+x  *           * <Lua 4: vim/_defaults.lua:0>
+                 :help v_star-default
+	Last set from Lua (run Nvim with -V1 for more details)
+x  @           * mode() ==# 'V' ? ':normal! @'.getcharstr().'<CR>' : '@'
+                 :help v_@-default
+	Last set from Lua (run Nvim with -V1 for more details)
+x  Q           * mode() ==# 'V' ? ':normal! @<C-R>=reg_recorded()<CR><CR>' : 'Q'
+                 :help v_Q-default
+	Last set from Lua (run Nvim with -V1 for more details)
+n  Y           * y$
+                 :help Y-default
+	Last set from Lua (run Nvim with -V1 for more details)
+o  [%            <Plug>(MatchitOperationMultiBackward)
+	Last set from ~/Downloads/nvim-v0.11.2/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 82
+x  [%            <Plug>(MatchitVisualMultiBackward)
+	Last set from ~/Downloads/nvim-v0.11.2/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 80
+n  [%            <Plug>(MatchitNormalMultiBackward)
+	Last set from ~/Downloads/nvim-v0.11.2/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 78
+n  [<Space>    * <Lua 59: vim/_defaults.lua:0>
+                 Add empty line above cursor
+	Last set from Lua (run Nvim with -V1 for more details)
+n  [B          * <Lua 57: vim/_defaults.lua:0>
+                 :brewind
+	Last set from Lua (run Nvim with -V1 for more details)
+n  [b          * <Lua 55: vim/_defaults.lua:0>
+                 :bprevious
+	Last set from Lua (run Nvim with -V1 for more details)
+n  [<C-T>      * <Lua 53: vim/_defaults.lua:0>
+                  :ptprevious
+	Last set from Lua (run Nvim with -V1 for more details)
+n  [T          * <Lua 51: vim/_defaults.lua:0>
+                 :trewind
+	Last set from Lua (run Nvim with -V1 for more details)
+n  [t          * <Lua 49: vim/_defaults.lua:0>
+                 :tprevious
+	Last set from Lua (run Nvim with -V1 for more details)
+n  [A          * <Lua 47: vim/_defaults.lua:0>
+                 :rewind
+	Last set from Lua (run Nvim with -V1 for more details)
+n  [a          * <Lua 45: vim/_defaults.lua:0>
+                 :previous
+	Last set from Lua (run Nvim with -V1 for more details)
+n  [<C-L>      * <Lua 43: vim/_defaults.lua:0>
+                 :lpfile
+	Last set from Lua (run Nvim with -V1 for more details)
+n  [L          * <Lua 41: vim/_defaults.lua:0>
+                 :lrewind
+	Last set from Lua (run Nvim with -V1 for more details)
+n  [l          * <Lua 39: vim/_defaults.lua:0>
+                 :lprevious
+	Last set from Lua (run Nvim with -V1 for more details)
+n  [<C-Q>      * <Lua 37: vim/_defaults.lua:0>
+                 :cpfile
+	Last set from Lua (run Nvim with -V1 for more details)
+n  [Q          * <Lua 35: vim/_defaults.lua:0>
+                 :crewind
+	Last set from Lua (run Nvim with -V1 for more details)
+n  [q          * <Lua 33: vim/_defaults.lua:0>
+                 :cprevious
+	Last set from Lua (run Nvim with -V1 for more details)
+n  [D          * <Lua 31: vim/_defaults.lua:0>
+                 Jump to the first diagnostic in the current buffer
+	Last set from Lua (run Nvim with -V1 for more details)
+n  [d          * <Lua 29: vim/_defaults.lua:0>
+                 Jump to the previous diagnostic in the current buffer
+	Last set from Lua (run Nvim with -V1 for more details)
+n  \\u           <Plug>CommentaryUndo:echomsg '\\ is deprecated. Use gc'<CR>
+	Last set from ~/.nvim/plugged/vim-commentary/plugin/commentary.vim line 107
+n  \\\           <Plug>CommentaryLine:echomsg '\\ is deprecated. Use gc'<CR>
+	Last set from ~/.nvim/plugged/vim-commentary/plugin/commentary.vim line 106
+n  \\            :echomsg '\\ is deprecated. Use gc'<CR><Plug>Commentary
+	Last set from ~/.nvim/plugged/vim-commentary/plugin/commentary.vim line 105
+x  \\            <Plug>Commentary:echomsg '\\ is deprecated. Use gc'<CR>
+	Last set from ~/.nvim/plugged/vim-commentary/plugin/commentary.vim line 104
+v  \c          * :OSCYankVisual<CR>
+	Last set from ~/.config/nvim/init.vim line 247
+n  \g          * <Cmd>Telescope git_status<CR>
+	Last set from ~/.config/nvim/init.vim line 183
+n  \hb         * <Cmd>Telescope buffers<CR>
+	Last set from ~/.config/nvim/init.vim line 182
+n  \f          * <Cmd>Telescope live_grep<CR>
+	Last set from ~/.config/nvim/init.vim line 181
+n  \p          * <Cmd>Telescope find_files<CR>
+	Last set from ~/.config/nvim/init.vim line 180
+n  \n          * :NERDTreeFind<CR>
+	Last set from ~/.config/nvim/init.vim line 177
+n  \b          * :NERDTreeToggle<CR>
+	Last set from ~/.config/nvim/init.vim line 176
+n  \rc         * <Cmd>lua _G.run_with_choice__user_mappings()<CR>
+	Last set from Lua (run Nvim with -V1 for more details)
+n  \rl         * <Cmd>lua _G.run_last_target__user_mappings()<CR>
+	Last set from Lua (run Nvim with -V1 for more details)
+n  \cc         * <Cmd>lua _G.build_with_choice__user_mappings()<CR>
+	Last set from Lua (run Nvim with -V1 for more details)
+n  \cl         * <Cmd>lua _G.build_last_target__user_mappings()<CR>
+	Last set from Lua (run Nvim with -V1 for more details)
+n  \ul         * <Cmd>lua _G.run_test_last__user_mappings()<CR>
+	Last set from Lua (run Nvim with -V1 for more details)
+n  \ug         * <Cmd>lua _G.run_test_group__user_mappings()<CR>
+	Last set from Lua (run Nvim with -V1 for more details)
+n  \ui         * <Cmd>lua _G.run_test_case__user_mappings()<CR>
+	Last set from Lua (run Nvim with -V1 for more details)
+n  \uf         * <Cmd>lua _G.run_test_file__user_mappings()<CR>
+	Last set from Lua (run Nvim with -V1 for more details)
+n  \ua         * <Cmd>lua _G.run_tests__user_mappings()<CR>
+	Last set from Lua (run Nvim with -V1 for more details)
+n  \do         * <Cmd>lua require'dap'.repl.toggle()<CR>
+	Last set from Lua (run Nvim with -V1 for more details)
+n  \dbc        * <Cmd>lua require'dap'.clear_breakpoints()<CR>
+	Last set from Lua (run Nvim with -V1 for more details)
+n  \dt         * <Cmd>lua require'dap'.terminate()<CR>
+	Last set from Lua (run Nvim with -V1 for more details)
+n  \dr         * <Cmd>lua require'dap'.restart()<CR>
+	Last set from Lua (run Nvim with -V1 for more details)
+n  \dl         * <Cmd>lua require'dap'.run_last()<CR>
+	Last set from Lua (run Nvim with -V1 for more details)
+n  \t          * <Cmd>execute v:count . "ToggleTerm"<CR>
+                 Toggle Terminal
+	Last set from Lua (run Nvim with -V1 for more details)
+o  ]%            <Plug>(MatchitOperationMultiForward)
+	Last set from ~/Downloads/nvim-v0.11.2/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 83
+x  ]%            <Plug>(MatchitVisualMultiForward)
+	Last set from ~/Downloads/nvim-v0.11.2/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 81
+n  ]%            <Plug>(MatchitNormalMultiForward)
+	Last set from ~/Downloads/nvim-v0.11.2/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 79
+n  ]<Space>    * <Lua 60: vim/_defaults.lua:0>
+                 Add empty line below cursor
+	Last set from Lua (run Nvim with -V1 for more details)
+n  ]B          * <Lua 58: vim/_defaults.lua:0>
+                 :blast
+	Last set from Lua (run Nvim with -V1 for more details)
+n  ]b          * <Lua 56: vim/_defaults.lua:0>
+                 :bnext
+	Last set from Lua (run Nvim with -V1 for more details)
+n  ]<C-T>      * <Lua 54: vim/_defaults.lua:0>
+                 :ptnext
+	Last set from Lua (run Nvim with -V1 for more details)
+n  ]T          * <Lua 52: vim/_defaults.lua:0>
+                 :tlast
+	Last set from Lua (run Nvim with -V1 for more details)
+n  ]t          * <Lua 50: vim/_defaults.lua:0>
+                 :tnext
+	Last set from Lua (run Nvim with -V1 for more details)
+n  ]A          * <Lua 48: vim/_defaults.lua:0>
+                 :last
+	Last set from Lua (run Nvim with -V1 for more details)
+n  ]a          * <Lua 46: vim/_defaults.lua:0>
+                 :next
+	Last set from Lua (run Nvim with -V1 for more details)
+n  ]<C-L>      * <Lua 44: vim/_defaults.lua:0>
+                 :lnfile
+	Last set from Lua (run Nvim with -V1 for more details)
+n  ]L          * <Lua 42: vim/_defaults.lua:0>
+                 :llast
+	Last set from Lua (run Nvim with -V1 for more details)
+n  ]l          * <Lua 40: vim/_defaults.lua:0>
+                 :lnext
+	Last set from Lua (run Nvim with -V1 for more details)
+n  ]<C-Q>      * <Lua 38: vim/_defaults.lua:0>
+                 :cnfile
+	Last set from Lua (run Nvim with -V1 for more details)
+n  ]Q          * <Lua 36: vim/_defaults.lua:0>
+                 :clast
+	Last set from Lua (run Nvim with -V1 for more details)
+n  ]q          * <Lua 34: vim/_defaults.lua:0>
+                 :cnext
+	Last set from Lua (run Nvim with -V1 for more details)
+n  ]D          * <Lua 30: vim/_defaults.lua:0>
+                 Jump to the last diagnostic in the current buffer
+	Last set from Lua (run Nvim with -V1 for more details)
+n  ]d          * <Lua 28: vim/_defaults.lua:0>
+                 Jump to the next diagnostic in the current buffer
+	Last set from Lua (run Nvim with -V1 for more details)
+n  ``          * :nohlsearch<CR>
+	Last set from ~/.config/nvim/init.vim line 161
+x  a%            <Plug>(MatchitVisualTextObject)
+	Last set from ~/Downloads/nvim-v0.11.2/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 86
+o  g%            <Plug>(MatchitOperationBackward)
+	Last set from ~/Downloads/nvim-v0.11.2/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 75
+x  g%            <Plug>(MatchitVisualBackward)
+	Last set from ~/Downloads/nvim-v0.11.2/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 73
+n  g%            <Plug>(MatchitNormalBackward)
+	Last set from ~/Downloads/nvim-v0.11.2/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 71
+n  gO          * <Lua 21: vim/_defaults.lua:0>
+                 vim.lsp.buf.document_symbol()
+	Last set from Lua (run Nvim with -V1 for more details)
+n  gri         * <Lua 20: vim/_defaults.lua:0>
+                 vim.lsp.buf.implementation()
+	Last set from Lua (run Nvim with -V1 for more details)
+n  grr         * <Lua 19: vim/_defaults.lua:0>
+                 vim.lsp.buf.references()
+	Last set from Lua (run Nvim with -V1 for more details)
+x  gra         * <Lua 18: vim/_defaults.lua:0>
+                 vim.lsp.buf.code_action()
+	Last set from Lua (run Nvim with -V1 for more details)
+n  gra         * <Lua 17: vim/_defaults.lua:0>
+                 vim.lsp.buf.code_action()
+	Last set from Lua (run Nvim with -V1 for more details)
+n  grn         * <Lua 16: vim/_defaults.lua:0>
+                 vim.lsp.buf.rename()
+	Last set from Lua (run Nvim with -V1 for more details)
+o  gc          * <Lua 15: vim/_defaults.lua:0>
+                 Comment textobject
+	Last set from Lua (run Nvim with -V1 for more details)
+n  gcc         * <Lua 14: vim/_defaults.lua:0>
+                 Toggle comment line
+	Last set from Lua (run Nvim with -V1 for more details)
+x  gc          * <Lua 13: vim/_defaults.lua:0>
+                 Toggle comment
+	Last set from Lua (run Nvim with -V1 for more details)
+n  gc          * <Lua 12: vim/_defaults.lua:0>
+                 Toggle comment
+	Last set from Lua (run Nvim with -V1 for more details)
+x  gx          * <Lua 11: vim/_defaults.lua:0>
+                 Opens filepath or URI under cursor with the system handler (file explorer, web browser, …)
+	Last set from Lua (run Nvim with -V1 for more details)
+n  gx          * <Lua 10: vim/_defaults.lua:0>
+                 Opens filepath or URI under cursor with the system handler (file explorer, web browser, …)
+	Last set from Lua (run Nvim with -V1 for more details)
+n  y<C-G>      & :<C-U>call setreg(v:register, fugitive#Object(@%))<CR>
+	Last set from ~/.nvim/plugged/vim-fugitive/plugin/fugitive.vim line 767
+x  <Plug>(MatchitVisualTextObject)   <Plug>(MatchitVisualMultiBackward)o<Plug>(MatchitVisualMultiForward)
+	Last set from ~/Downloads/nvim-v0.11.2/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 67
+o  <Plug>(MatchitOperationMultiForward) * :<C-U>call matchit#MultiMatch("W",  "o")<CR>
+	Last set from ~/Downloads/nvim-v0.11.2/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 64
+o  <Plug>(MatchitOperationMultiBackward) * :<C-U>call matchit#MultiMatch("bW", "o")<CR>
+	Last set from ~/Downloads/nvim-v0.11.2/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 63
+x  <Plug>(MatchitVisualMultiForward) * :<C-U>call matchit#MultiMatch("W",  "n")<CR>m'gv``
+	Last set from ~/Downloads/nvim-v0.11.2/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 62
+x  <Plug>(MatchitVisualMultiBackward) * :<C-U>call matchit#MultiMatch("bW", "n")<CR>m'gv``
+	Last set from ~/Downloads/nvim-v0.11.2/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 61
+n  <Plug>(MatchitNormalMultiForward) * :<C-U>call matchit#MultiMatch("W",  "n")<CR>
+	Last set from ~/Downloads/nvim-v0.11.2/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 60
+n  <Plug>(MatchitNormalMultiBackward) * :<C-U>call matchit#MultiMatch("bW", "n")<CR>
+	Last set from ~/Downloads/nvim-v0.11.2/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 59
+o  <Plug>(MatchitOperationBackward) * :<C-U>call matchit#Match_wrapper('',0,'o')<CR>
+	Last set from ~/Downloads/nvim-v0.11.2/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 56
+o  <Plug>(MatchitOperationForward) * :<C-U>call matchit#Match_wrapper('',1,'o')<CR>
+	Last set from ~/Downloads/nvim-v0.11.2/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 55
+x  <Plug>(MatchitVisualBackward) * :<C-U>call matchit#Match_wrapper('',0,'v')<CR>m'gv``
+	Last set from ~/Downloads/nvim-v0.11.2/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 54
+x  <Plug>(MatchitVisualForward) * :<C-U>call matchit#Match_wrapper('',1,'v')<CR>:if col("''") != col("$") | exe ":normal! m'" | endif<CR>gv``
+	Last set from ~/Downloads/nvim-v0.11.2/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 52
+n  <Plug>(MatchitNormalBackward) * :<C-U>call matchit#Match_wrapper('',0,'n')<CR>
+	Last set from ~/Downloads/nvim-v0.11.2/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 51
+n  <Plug>(MatchitNormalForward) * :<C-U>call matchit#Match_wrapper('',1,'n')<CR>
+	Last set from ~/Downloads/nvim-v0.11.2/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 50
+n  <Plug>PlenaryTestFile * :lua require('plenary.test_harness').test_file(vim.fn.expand("%:p"))<CR>
+	Last set from ~/.nvim/plugged/plenary.nvim/plugin/plenary.vim line 9
+s  <Plug>luasnip-jump-prev * <Lua 131: ~/.nvim/plugged/LuaSnip/plugin/luasnip.lua:57>
+                 LuaSnip: Jump to the previous node
+	Last set from ~/.nvim/plugged/LuaSnip/plugin/luasnip.lua (run Nvim with -V1 for more details)
+s  <Plug>luasnip-jump-next * <Lua 130: ~/.nvim/plugged/LuaSnip/plugin/luasnip.lua:54>
+                 LuaSnip: Jump to the next node
+	Last set from ~/.nvim/plugged/LuaSnip/plugin/luasnip.lua (run Nvim with -V1 for more details)
+s  <Plug>luasnip-prev-choice * <Lua 129: ~/.nvim/plugged/LuaSnip/plugin/luasnip.lua:51>
+                 LuaSnip: Change to the previous choice from the choiceNode
+	Last set from ~/.nvim/plugged/LuaSnip/plugin/luasnip.lua (run Nvim with -V1 for more details)
+s  <Plug>luasnip-next-choice * <Lua 128: ~/.nvim/plugged/LuaSnip/plugin/luasnip.lua:48>
+                 LuaSnip: Change to the next choice from the choiceNode
+	Last set from ~/.nvim/plugged/LuaSnip/plugin/luasnip.lua (run Nvim with -V1 for more details)
+s  <Plug>luasnip-expand-snippet * <Lua 127: ~/.nvim/plugged/LuaSnip/plugin/luasnip.lua:45>
+                 LuaSnip: Expand the current snippet
+	Last set from ~/.nvim/plugged/LuaSnip/plugin/luasnip.lua (run Nvim with -V1 for more details)
+s  <Plug>luasnip-expand-or-jump * <Lua 126: ~/.nvim/plugged/LuaSnip/plugin/luasnip.lua:42>
+                 LuaSnip: Expand or jump in the current snippet
+	Last set from ~/.nvim/plugged/LuaSnip/plugin/luasnip.lua (run Nvim with -V1 for more details)
+   <Plug>luasnip-expand-repeat * <Lua 124: ~/.nvim/plugged/LuaSnip/plugin/luasnip.lua:35>
+                 LuaSnip: Repeat last node expansion
+	Last set from ~/.nvim/plugged/LuaSnip/plugin/luasnip.lua (run Nvim with -V1 for more details)
+n  <Plug>luasnip-delete-check * <Lua 122: ~/.nvim/plugged/LuaSnip/plugin/luasnip.lua:28>
+                 LuaSnip: Removes current snippet from jumplist
+	Last set from ~/.nvim/plugged/LuaSnip/plugin/luasnip.lua (run Nvim with -V1 for more details)
+n  <Plug>GitGutterPreviewHunk * :call gitgutter#utility#warn('Please change your map <Plug>GitGutterPreviewHunk to <Plug>(GitGutterPreviewHunk)')<CR>
+	Last set from ~/.nvim/plugged/vim-gitgutter/plugin/gitgutter.vim line 232
+n  <Plug>(GitGutterPreviewHunk) * :GitGutterPreviewHunk<CR>
+	Last set from ~/.nvim/plugged/vim-gitgutter/plugin/gitgutter.vim line 231
+n  <Plug>GitGutterUndoHunk * :call gitgutter#utility#warn('Please change your map <Plug>GitGutterUndoHunk to <Plug>(GitGutterUndoHunk)')<CR>
+	Last set from ~/.nvim/plugged/vim-gitgutter/plugin/gitgutter.vim line 230
+n  <Plug>(GitGutterUndoHunk) * :GitGutterUndoHunk<CR>
+	Last set from ~/.nvim/plugged/vim-gitgutter/plugin/gitgutter.vim line 229
+n  <Plug>GitGutterStageHunk * :call gitgutter#utility#warn('Please change your map <Plug>GitGutterStageHunk to <Plug>(GitGutterStageHunk)')<CR>
+	Last set from ~/.nvim/plugged/vim-gitgutter/plugin/gitgutter.vim line 228
+n  <Plug>(GitGutterStageHunk) * :GitGutterStageHunk<CR>
+	Last set from ~/.nvim/plugged/vim-gitgutter/plugin/gitgutter.vim line 227
+x  <Plug>GitGutterStageHunk * :call gitgutter#utility#warn('Please change your map <Plug>GitGutterStageHunk to <Plug>(GitGutterStageHunk)')<CR>
+	Last set from ~/.nvim/plugged/vim-gitgutter/plugin/gitgutter.vim line 226
+x  <Plug>(GitGutterStageHunk) * :GitGutterStageHunk<CR>
+	Last set from ~/.nvim/plugged/vim-gitgutter/plugin/gitgutter.vim line 225
+n  <Plug>GitGutterPrevHunk * &diff ? '[c' : ":\<C-U>call gitgutter#utility#warn('Please change your map \<Plug>GitGutterPrevHunk to \<Plug>(GitGutterPrevHunk)')\<CR>"
+	Last set from ~/.nvim/plugged/vim-gitgutter/plugin/gitgutter.vim line 223
+n  <Plug>(GitGutterPrevHunk) * &diff ? '[c' : ":\<C-U>execute v:count1 . 'GitGutterPrevHunk'\<CR>"
+	Last set from ~/.nvim/plugged/vim-gitgutter/plugin/gitgutter.vim line 222
+n  <Plug>GitGutterNextHunk * &diff ? ']c' : ":\<C-U>call gitgutter#utility#warn('Please change your map \<Plug>GitGutterNextHunk to \<Plug>(GitGutterNextHunk)')\<CR>"
+	Last set from ~/.nvim/plugged/vim-gitgutter/plugin/gitgutter.vim line 221
+n  <Plug>(GitGutterNextHunk) * &diff ? ']c' : ":\<C-U>execute v:count1 . 'GitGutterNextHunk'\<CR>"
+	Last set from ~/.nvim/plugged/vim-gitgutter/plugin/gitgutter.vim line 220
+x  <Plug>(GitGutterTextObjectOuterVisual) * :<C-U>call gitgutter#hunk#text_object(0)<CR>
+	Last set from ~/.nvim/plugged/vim-gitgutter/plugin/gitgutter.vim line 176
+x  <Plug>(GitGutterTextObjectInnerVisual) * :<C-U>call gitgutter#hunk#text_object(1)<CR>
+	Last set from ~/.nvim/plugged/vim-gitgutter/plugin/gitgutter.vim line 175
+o  <Plug>(GitGutterTextObjectOuterPending) * :<C-U>call gitgutter#hunk#text_object(0)<CR>
+	Last set from ~/.nvim/plugged/vim-gitgutter/plugin/gitgutter.vim line 174
+o  <Plug>(GitGutterTextObjectInnerPending) * :<C-U>call gitgutter#hunk#text_object(1)<CR>
+	Last set from ~/.nvim/plugged/vim-gitgutter/plugin/gitgutter.vim line 173
+n  <Plug>CommentaryUndo   <Plug>Commentary<Plug>Commentary
+	Last set from ~/.nvim/plugged/vim-commentary/plugin/commentary.vim line 91
+n  <Plug>ChangeCommentary * c:<C-U>call <SNR>35_textobject(1)<CR>
+	Last set from ~/.nvim/plugged/vim-commentary/plugin/commentary.vim line 90
+o  <Plug>Commentary * :<C-U>call <SNR>35_textobject(0)<CR>
+	Last set from ~/.nvim/plugged/vim-commentary/plugin/commentary.vim line 89
+n  <Plug>CommentaryLine * :<C-U>set opfunc=<SNR>35_go|exe 'norm! 'v:count1.'g@_'<CR>
+	Last set from ~/.nvim/plugged/vim-commentary/plugin/commentary.vim line 88
+n  <Plug>Commentary * :<C-U>set opfunc=<SNR>35_go<CR>g@
+	Last set from ~/.nvim/plugged/vim-commentary/plugin/commentary.vim line 87
+x  <Plug>Commentary * :<C-U>call <SNR>35_go(line("'<"),line("'>"))<CR>
+	Last set from ~/.nvim/plugged/vim-commentary/plugin/commentary.vim line 86
+n  <Plug>fugitive: & <Nop>
+	Last set from ~/.nvim/plugged/vim-fugitive/plugin/fugitive.vim line 774
+n  <Plug>fugitive:y<C-G> & :<C-U>call setreg(v:register, fugitive#Object(@%))<CR>
+	Last set from ~/.nvim/plugged/vim-fugitive/plugin/fugitive.vim line 773
+s  <C-E>         luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
+	Last set from ~/.config/nvim/init.vim line 243
+n  <C-Down>    * <Cmd>resize +2<CR>
+	Last set from ~/.config/nvim/init.vim line 188
+n  <C-Up>      * <Cmd>resize -2<CR>
+	Last set from ~/.config/nvim/init.vim line 187
+n  <C-Right>   * <Cmd>vertical resize -2<CR>
+	Last set from ~/.config/nvim/init.vim line 186
+n  <C-Left>    * <Cmd>vertical resize +2<CR>
+	Last set from ~/.config/nvim/init.vim line 185
+n  <C-K>       * <C-W><C-K>
+	Last set from ~/.config/nvim/init.vim line 166
+n  <C-J>       * <C-W><NL>
+	Last set from ~/.config/nvim/init.vim line 165
+n  <C-H>       * <C-W><C-H>
+	Last set from ~/.config/nvim/init.vim line 164
+n  <F12>       * <Cmd>lua _G.toggle_terminal__user_mappings()<CR>
+	Last set from Lua (run Nvim with -V1 for more details)
+n  <C-B>       * <Cmd>lua require'dap'.toggle_breakpoint()<CR>
+	Last set from Lua (run Nvim with -V1 for more details)
+n  <F9>        * <Cmd>lua require'dap'.step_out()<CR>
+	Last set from Lua (run Nvim with -V1 for more details)
+n  <F8>        * <Cmd>lua require'dap'.step_into()<CR>
+	Last set from Lua (run Nvim with -V1 for more details)
+n  <F7>        * <Cmd>lua require'dap'.step_over()<CR>
+	Last set from Lua (run Nvim with -V1 for more details)
+n  <F6>        * <Cmd>lua require'dap'.continue()<CR>
+	Last set from Lua (run Nvim with -V1 for more details)
+n  <C-W><C-D>    <C-W>d
+                 Show diagnostics under the cursor
+	Last set from Lua (run Nvim with -V1 for more details)
+n  <C-W>d      * <Lua 32: vim/_defaults.lua:0>
+                 Show diagnostics under the cursor
+	Last set from Lua (run Nvim with -V1 for more details)
+s  <S-Tab>     * <Cmd>lua require('luasnip').jump(-1)<CR>
+	Last set from ~/.config/nvim/init.vim line 240
+s  <C-S>       * <Lua 23: vim/_defaults.lua:0>
+                 vim.lsp.buf.signature_help()
+	Last set from Lua (run Nvim with -V1 for more details)
+n  <C-L>       * <C-W><C-L>
+	Last set from ~/.config/nvim/init.vim line 167
+

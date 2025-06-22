@@ -5,11 +5,11 @@ vim.api.nvim_set_keymap('n', '<F7>', '<Cmd>lua require\'dap\'.step_over()<CR>', 
 vim.api.nvim_set_keymap('n', '<F8>', '<Cmd>lua require\'dap\'.step_into()<CR>', opts)
 vim.api.nvim_set_keymap('n', '<F9>', '<Cmd>lua require\'dap\'.step_out()<CR>', opts)
 vim.api.nvim_set_keymap('n', '<C-b>', '<Cmd>lua require\'dap\'.toggle_breakpoint()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>dl', '<Cmd>lua require\'dap\'.run_last()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>dr', '<Cmd>lua require\'dap\'.restart()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>dt', '<Cmd>lua require\'dap\'.terminate()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>dbc', '<Cmd>lua require\'dap\'.clear_breakpoints()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>do', '<Cmd>lua require\'dap\'.repl.toggle()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<Space>dl', '<Cmd>lua require\'dap\'.run_last()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<Space>dr', '<Cmd>lua require\'dap\'.restart()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<Space>dt', '<Cmd>lua require\'dap\'.terminate()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<Space>dbc', '<Cmd>lua require\'dap\'.clear_breakpoints()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<Space>do', '<Cmd>lua require\'dap\'.repl.toggle()<CR>', opts)
 
 local dap = require('dap')
 
