@@ -35,7 +35,7 @@ Plug 'airblade/vim-gitgutter', { 'commit': 'e801371917e52805a4ceb1e93f55ed1fba71
 " Plug 'nvim-treesitter/playground' deprecated use :Inspect :InspectTree
 " :EditQuery (Nvim 0.10+)
 Plug 'akinsho/toggleterm.nvim', { 'tag': 'v2.11.0' }
-Plug 'savq/melange', { 'tag': '2024-01-27' }
+Plug 'savq/melange', { 'tag': 'v0.9.0' }
 Plug 'L3MON4D3/LuaSnip', { 'tag': 'v2.3.0' }
 Plug 'nvim-lua/plenary.nvim', { 'tag': 'v0.1.4' }
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.8' }
@@ -109,7 +109,8 @@ EOF
 "inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " Set completeopt to have a better completion experience
-set completeopt=menu,menuone,noselect,popup,longest,fuzzy
+"set completeopt=menu,menuone,popup,fuzzy,longest
+set completeopt=menu,menuone,fuzzy,noinsert,preview,nosort,preview
 set pumheight=20
 set pumwidth=15
 
@@ -157,6 +158,8 @@ let g:typescript_indent_disable = 1
 " Показывать табы, даже когда открыт всего один таб
 set showtabline=2
 
+set grepprg=rg\ --vimgrep\ --hidden
+
 nnoremap <silent> `` :nohlsearch<CR>
 
 " Навигация по сплитам
@@ -194,8 +197,8 @@ nnoremap <C-Down> <cmd>resize +2<cr>
 
 set termguicolors
 
- "colorscheme codedark
-" colorscheme melange
+" colorscheme codedark
+"colorscheme melange
 " colorscheme base16-woodland
 " colorscheme base16-atelier-dune
 " colorscheme base16-atelier-plateau
@@ -204,14 +207,18 @@ set termguicolors
 " colorscheme base16-dirtysea " light
 " colorscheme base16-equilibrium-gray-dark
 " colorscheme base16-black-metal-dark-funeral
-colorscheme base16-catppuccin-macchiato
+" colorscheme base16-catppuccin-macchiato
 " colorscheme base16-equilibrium-light
 " colorscheme base16-atelier-heath-light
+colorscheme base16-tokyo-night-dark
 
-hi Normal guibg=NONE ctermbg=NONE
-hi EndOfBuffer guibg=NONE ctermbg=NONE
-hi LineNr guibg=NONE ctermbg=NONE
-hi SignColumn guibg=NONE ctermbg=NONE
+" hi Normal guibg=NONE ctermbg=NONE
+" hi EndOfBuffer guibg=NONE ctermbg=NONE
+" hi LineNr guibg=NONE ctermbg=NONE
+" hi SignColumn guibg=NONE ctermbg=NONE
+hi TSComment guifg=gray
+hi TSConstant guifg=white
+hi TSType guifg=#2A8ADE
 
 set colorcolumn=81
 set signcolumn=yes

@@ -75,6 +75,21 @@ local cpp_snippets = {
 	}),
 }
 
+local php_snippets = {
+    s("tas", {
+        t("$this->assert"), i(0)
+    }),
+    s("teq", {
+        t("$this->assertEquals("), i(0), t(");")
+    }),
+    s("_try", {
+		t("try {"), i(0),
+		t({"", "} catch (\\Throwable $t) {"}),
+		t({"", "}"}),
+    }),
+}
+
 ls.add_snippets("cpp", cpp_snippets)
 ls.add_snippets("typescript", ts_snippets)
 ls.add_snippets("typescriptreact", ts_snippets)
+ls.add_snippets("php", php_snippets)

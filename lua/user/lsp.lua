@@ -267,4 +267,4 @@ vim.api.nvim_create_autocmd(
 --   vim.api.nvim_set_hl(0, group, {})
 -- end
 
-vim.lsp.enable({'luals', 'cpp'})
+vim.lsp.enable({"luals", "cpp", "ts", "php"})
